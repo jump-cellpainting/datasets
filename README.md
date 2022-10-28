@@ -1,1 +1,1 @@
-# data-release
+# JUMP Cell Painting Datasets
