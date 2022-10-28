@@ -22,7 +22,7 @@ Currently, this collection comprises 5 datasets:
 - The first draft of a metadata file that maps each `jcp2022_id` to available metadata about the perturbation
 - A notebook to load and inspect the data currently available in `cpg0016`
 
-**Please note: At present in `cpg0016`, many compounds will be missing replicates, and a full QC of the dataset is pending. We don’t recommend performing any analysis with `cpg0016` until all the remaining components and all sources are uploaded and the full QC of the dataset is complete. **
+**Please note: At present in `cpg0016`, many compounds will be missing replicates, and a full QC of the dataset is pending. We don’t recommend performing any analysis with `cpg0016` until all the remaining components and all sources are uploaded and the full QC of the dataset is complete.**
 
 ### What’s coming up
 
