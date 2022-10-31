@@ -2,15 +2,15 @@
 erDiagram
     WELL }|--|| PLATE : ""
     WELL {
-        string Metadata_Source PK "Source"
-        string Metadata_Plate PK "Plate ID"
-        string Metadata_Well PK "Well position"
-        string Metadata_JCP2022 FK "Perturbation identifier"
+        string Metadata_Source "Source"
+        string Metadata_Plate "Plate ID"
+        string Metadata_Well "Well position"
+        string Metadata_JCP2022 "Perturbation identifier"
     }
     PLATE {
-        string Metadata_Source PK "Source"
-        string Metadata_Batch PK "Batch ID"
-        string Metadata_Plate PK "Plate ID"
+        string Metadata_Source "Source"
+        string Metadata_Batch "Batch ID"
+        string Metadata_Plate "Plate ID"
         string Metadata_PlateType
     }
     WELL }|--|| COMPOUND : ""
