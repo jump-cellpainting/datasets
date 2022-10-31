@@ -33,10 +33,6 @@ Currently, this collection comprises 5 datasets:
 - [Quality control](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md#quality_control-folder-structure) results at the image level for the principal dataset to allow removing bad images.
 - Our manuscript, Chandrasekaran et al., 2022b, which is being approved by pharmaceutical company partners and will be released on bioRxiv.
 
-## Statistics
-
-TODO
-
 ## How to load the data: notebooks
 
 TODO: See notebook [URL] to learn more about how to load the data in the principal dataset.
