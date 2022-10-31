@@ -36,7 +36,7 @@ Currently, this collection comprises 5 datasets:
 
 TODO: See notebook [URL] to learn more about how to load the data in the principal dataset.
 
-See the typical [folder structure]((https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md)) for datasets in the Cell Painting Gallery.
+See the typical [folder structure](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) for datasets in the Cell Painting Gallery.
 Please [note](README.md#whats-available-now) that not all components are currently available.
 
 ## Citation/license
