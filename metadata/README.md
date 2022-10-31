@@ -1,5 +1,8 @@
 # Metadata
 
+The metadata schema is shown below
+
+
 ```mermaid
 erDiagram
     WELL }|--|| PLATE : ""
@@ -13,7 +16,7 @@ erDiagram
         string Metadata_Source "Data-generating center ID"
         string Metadata_Batch "Batch ID"
         string Metadata_Plate "Plate ID"
-        string Metadata_PlateType "One of: BORTEZOMIB, TARGET1, TARGET2, POSCON8, DMSO, ORF, COMPOUND"
+        string Metadata_PlateType "One of: BORTEZOMIB, TARGET1, TARGET2, POSCON8, DMSO, ORF, COMPOUND, COMPOUND_EMPTY"
     }
     WELL }|--|| COMPOUND : ""
     COMPOUND {
