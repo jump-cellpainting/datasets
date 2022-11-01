@@ -36,7 +36,7 @@ Currently, this collection comprises 5 datasets:
 
 See the [sample notebook](sample_notebook.ipynb) to learn more about how to load the data in the principal dataset.
 
-To run the notebook, first nstall the python dependencies and activate the virtual environment
+To run the notebook, first install the python dependencies and activate the virtual environment
 
    ```bash
    # install pipenv if you don't have it already https://pipenv.pypa.io/en/latest/#install-pipenv-today
