@@ -68,6 +68,14 @@ _We used the dataset cpg001 (Cimini et al., 2022), available from the Cell Paint
 
 _We used the dataset cpg000 (Chandrasekaran et al., 2022a), available from the Cell Painting Gallery on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/)._
 
+## Gratitude 
+
+Thanks to Consortium Partner scientists for creating this data, from Ksilink, Amgen, AstraZeneca, Bayer, Biogen, the Broad Institute, Eisai, Janssen Pharmaceutica NV, Merck KGaA Darmstadt Germany, Pfizer, Servier, and Takeda.
+
+Supporting Partners include Ardigen, Google Research, Nomic Bio, PerkinElmer, and Verily. Collaborators include the Pistoia Alliance, Umeå University, and the Stanford Machine Learning Group. The AWS Open Data Sponsorship Program is sponsoring data storage.
+
+This work was funded by a major grant from the Massachusetts Life Sciences Center and the National Institutes of Health through MIRA R35 GM122547 to Anne Carpenter.
+
 ## Questions?
 
 Please ask your questions via issues [https://github.com/jump-cellpainting/datasets/issues](https://github.com/jump-cellpainting/dataset/issues).
