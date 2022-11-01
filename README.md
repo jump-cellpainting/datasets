@@ -26,7 +26,7 @@ Currently, this collection comprises 5 datasets:
 ### What’s coming up
 
 - Extending the metadata and notebooks to the three pilots and the reprocessed dataset so that all these datasets can be quickly loaded together.
-- Curated annotations for the compounds, obtained from [ChemBL](https://www.ebi.ac.uk/chembl/) and other sources.
+- Curated annotations for the compounds, obtained from [ChEMBL](https://www.ebi.ac.uk/chembl/) and other sources.
 - The remaining data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) (normalized profiles, feature selected profiles, treatment-level consensus profiles, quality control results) and the remaining sources for the principal dataset.
 - Deep learning [embeddings](https://tfhub.dev/google/imagenet/efficientnet_v2_imagenet1k_s/feature_vector/2) using a pre-trained neural network for all 5 datasets.
 - [Quality control](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md#quality_control-folder-structure) results at the image level for the principal dataset to allow removing bad images.
@@ -64,9 +64,9 @@ Please note that the JUMP whole-project manuscript (Chandrasekaran et al., 2022b
 To cite individual JUMP Cell Painting datasets, please follow the guidelines in the Cell Painting Gallery citation [guide](https://github.com/broadinstitute/cellpainting-gallery/#citationlicense).
 Examples are as follows:
 
-_We used the dataset cpg001 (Cimini et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/)._
+_We used the dataset cpg0001 (Cimini et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/)._
 
-_We used the dataset cpg000 (Chandrasekaran et al., 2022a), available from the Cell Painting Gallery on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/)._
+_We used the dataset cpg0000 (Chandrasekaran et al., 2022a), available from the Cell Painting Gallery on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/)._
 
 ## Gratitude 
 
