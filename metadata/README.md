@@ -1,6 +1,6 @@
 # Metadata
 
-The metadata schema is shown below
+The metadata [schema](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram?id=entity-relationship-diagrams) is shown below
 
 
 ```mermaid
@@ -18,7 +18,7 @@ erDiagram
         string Metadata_Plate "Plate ID"
         string Metadata_PlateType "One of: BORTEZOMIB, TARGET1, TARGET2, POSCON8, DMSO, ORF, COMPOUND, COMPOUND_EMPTY"
     }
-    WELL }|--|| COMPOUND : ""
+    WELL }o--o| COMPOUND : ""
     COMPOUND {
         string Metadata_JCP2022 PK "Perturbation identifier"
         string Metadata_InChI "International Chemical Identifier"
