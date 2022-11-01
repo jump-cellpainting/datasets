@@ -34,7 +34,15 @@ Currently, this collection comprises 5 datasets:
 
 ## How to load the data: notebooks and folder structure
 
-TODO: See notebook [URL] to learn more about how to load the data in the principal dataset.
+See the [sample notebook](sample_notebook.ipynb) to learn more about how to load the data in the principal dataset.
+
+To run the notebook, first nstall the python dependencies and activate the virtual environment
+
+   ```bash
+   # install pipenv if you don't have it already https://pipenv.pypa.io/en/latest/#install-pipenv-today
+   pipenv install
+   pipenv shell
+   ```
 
 See the typical [folder structure](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) for datasets in the Cell Painting Gallery.
 Please [note](README.md#whats-available-now) that not all components are currently available.
