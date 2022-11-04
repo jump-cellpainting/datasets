@@ -79,3 +79,5 @@ This work was funded by a major grant from the Massachusetts Life Sciences Cente
 ## Questions?
 
 Please ask your questions via issues [https://github.com/jump-cellpainting/datasets/issues](https://github.com/jump-cellpainting/dataset/issues).
+
+Keep posted on future data updates by subscribing to our email list, see the button here: https://jump-cellpainting.broadinstitute.org/more-info
