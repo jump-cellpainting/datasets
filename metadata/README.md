@@ -24,4 +24,9 @@ erDiagram
         string Metadata_InChI "International Chemical Identifier"
         string Metadata_InChIKey "Hashed InChI"
     }
+    WELL }o--o| ORF : ""
+    ORF {
+        string Metadata_JCP2022 PK "Perturbation identifier"
+        string Metadata_NCBI_Gene_ID "NCBI unique identifier of a gene"
+    }
 ```
