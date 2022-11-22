@@ -27,7 +27,6 @@ erDiagram
     WELL }o--o| ORF : ""
     ORF {
         string Metadata_JCP2022 PK "Unique JUMP perturbation identifier"
-        string Metadata_NCBI_Gene_ID "NCBI unique identifier of a gene"
         string Metadata_broad_sample "Unique Broad perturbation identifier"
         string Metadata_Name "Unique internal perturbation identifier"
         string Metadata_Vector "Name of the ORF expression vector"
@@ -35,6 +34,7 @@ erDiagram
         int Metadata_Insert_Length "Length of the ORF sequence"
         string Metadata_pert_type "One of: trt, control"
         string Metadata_Taxon_ID "NCBI taxonomy ID"
+        string Metadata_NCBI_Gene_ID "NCBI unique identifier of a gene"
         string Metadata_Gene_Description "NCBI gene definition"
         string Metadata_Transcript "NCBI RefSeq version"
         string Metadata_Annot_Gene_ID "NCBI RefSeq gene ID"
