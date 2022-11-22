@@ -20,7 +20,7 @@ erDiagram
     }
     WELL }o--o| COMPOUND : ""
     COMPOUND {
-        string Metadata_JCP2022 PK "Perturbation identifier"
+        string Metadata_JCP2022 PK "Unique JUMP perturbation identifier"
         string Metadata_InChI "International Chemical Identifier"
         string Metadata_InChIKey "Hashed InChI"
     }
@@ -31,14 +31,14 @@ erDiagram
         string Metadata_broad_sample "Unique Broad perturbation identifier"
         string Metadata_Name "Unique internal perturbation identifier"
         string Metadata_Vector "Name of the ORF expression vector"
-        string Metadata_Transcript ""
-        string Metadata_Symbol "NCBI reference sequence version"
+        float Metadata_Prot_Match "% match to protein sequence"
+        int Metadata_Insert_Length "Length of the ORF sequence"
+        string Metadata_pert_type "One of: trt, control"
         string Metadata_Taxon_ID "NCBI taxonomy ID"
         string Metadata_Gene_Description "NCBI gene definition"
-        string Metadata_Annot_Gene_Symbol "NCBI RefSeq gene name"
+        string Metadata_Transcript "NCBI RefSeq version"
         string Metadata_Annot_Gene_ID "NCBI RefSeq gene ID"
-        float Metadata_Prot_Match "% match to protein sequence"
-        int Metadata_Insert_Length ""
-        string Metadata_pert_type "One of: trt, control"
+        string Metadata_Symbol ""
+        string Metadata_Annot_Gene_Symbol ""
     }
 ```
