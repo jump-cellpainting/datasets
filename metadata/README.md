@@ -30,7 +30,7 @@ erDiagram
         string Metadata_NCBI_Gene_ID "NCBI unique identifier of a gene"
         string Metadata_broad_sample ""
         string Metadata_Name ""
-        string Metadata_Vector ""
+        string Metadata_Vector "Name of the ORF expression vector"
         string Metadata_Transcript ""
         string Metadata_Symbol ""
         string Metadata_Taxon_ID ""
