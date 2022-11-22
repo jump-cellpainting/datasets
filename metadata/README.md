@@ -33,13 +33,12 @@ erDiagram
         string Metadata_Vector ""
         string Metadata_Transcript ""
         string Metadata_Symbol ""
-        string Metadata_NCBI_Gene_ID ""
         string Metadata_Taxon_ID ""
         string Metadata_Gene_Description ""
         string Metadata_Annot_Gene_Symbol ""
         string Metadata_Annot_Gene_ID ""
         string Metadata_Prot_Match ""
         string Metadata_Insert_Length ""
-        string Metadata_pert_type ""
+        string Metadata_pert_type "One of: trt, control"
     }
 ```
