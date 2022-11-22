@@ -34,7 +34,7 @@ erDiagram
         string Metadata_Transcript ""
         string Metadata_Symbol "NCBI reference sequence version"
         string Metadata_Taxon_ID "NCBI taxonomy ID"
-        string Metadata_Gene_Description ""
+        string Metadata_Gene_Description "NCBI gene definition"
         string Metadata_Annot_Gene_Symbol ""
         string Metadata_Annot_Gene_ID ""
         string Metadata_Prot_Match ""
