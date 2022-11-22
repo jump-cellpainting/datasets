@@ -36,7 +36,7 @@ erDiagram
         string Metadata_Taxon_ID "NCBI taxonomy ID"
         string Metadata_Gene_Description "NCBI gene definition"
         string Metadata_Annot_Gene_Symbol "NCBI RefSeq gene name"
-        string Metadata_Annot_Gene_ID ""
+        string Metadata_Annot_Gene_ID "NCBI RefSeq gene ID"
         string Metadata_Prot_Match ""
         string Metadata_Insert_Length ""
         string Metadata_pert_type "One of: trt, control"
