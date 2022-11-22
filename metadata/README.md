@@ -26,7 +26,7 @@ erDiagram
     }
     WELL }o--o| ORF : ""
     ORF {
-        string Metadata_JCP2022 PK "Perturbation identifier"
+        string Metadata_JCP2022 PK "Unique JUMP perturbation identifier"
         string Metadata_NCBI_Gene_ID "NCBI unique identifier of a gene"
         string Metadata_broad_sample ""
         string Metadata_Name ""
