@@ -28,7 +28,7 @@ erDiagram
     ORF {
         string Metadata_JCP2022 PK "Unique JUMP perturbation identifier"
         string Metadata_NCBI_Gene_ID "NCBI unique identifier of a gene"
-        string Metadata_broad_sample ""
+        string Metadata_broad_sample "Unique Broad perturbation identifier"
         string Metadata_Name "Unique internal perturbation identifier"
         string Metadata_Vector "Name of the ORF expression vector"
         string Metadata_Transcript ""
