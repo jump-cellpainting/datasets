@@ -75,6 +75,6 @@ erDiagram
         float Metadata_Emission_High_RNA "Emission wavelength max, RNA channel"
         float Metadata_Emission_High_AGP "Emission wavelength max, AGP channel"
         float Metadata_Emission_High_Mito "Emission wavelength max, Mito channel"
-        string Metadata_FPBase_Config "FPBase config"
+        string Metadata_FPBase_Config "Fluorescence spectra config URL"
     }
 ```
