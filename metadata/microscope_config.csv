@@ -1,0 +1,14 @@
+Metadata_Source,Metadata_Microscope_Name,Metadata_Widefield_vs_Confocal,Metadata_Excitation_Type,Metadata_Objective_NA,Metadata_N_Brightfield_Planes_Min,Metadata_N_Brightfield_Planes_Max,Metadata_Distance_Between_Z_Microns,Metadata_Sites_Per_Well,Metadata_Filter_Configuration
+1,Opera Phenix,Widefield,Laser,1.0,1,1,,4,H
+2,CV8000,Confocal,Laser,1.0,3,3,8,6,A
+3,Opera Phenix,Widefield,Laser,1.0,0,3,5,9,B
+4,Opera Phenix,Widefield,Laser,1.0,3,3,5,9,B
+5,CV8000,Confocal,Laser,0.75,3,3,5,9,C
+6,CV8000,Confocal,Laser,0.75,3,3,5,9,A
+7,CV7000,Confocal,Laser,0.75,0,0,,9,D
+8,ImageXpress Micro Confocal,Confocal,LED,0.75,0,0,3,9,E
+9,Opera Phenix,Widefield,Laser,0.8,0,0,,4,H
+10,CV8000,Confocal,Laser,0.4,3,3,5,6,A
+11,Operetta,Widefield,LED,1.0,1,1,,9,F
+13,CV7000,Confocal,Laser,0.75,0,0,,9,D
+15,Opera Phenix,Widefield,Laser,0.4,3,3,5,9,G

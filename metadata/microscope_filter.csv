@@ -1,0 +1,9 @@
+Metadata_Filter_Configuration,Metadata_Excitation_Low_DNA,Metadata_Excitation_Low_ER,Metadata_Excitation_Low_RNA,Metadata_Excitation_Low_AGP,Metadata_Excitation_Low_Mito,Metadata_Excitation_High_DNA,Metadata_Excitation_High_ER,Metadata_Excitation_High_RNA,Metadata_Excitation_High_AGP,Metadata_Excitation_High_Mito,Metadata_Emission_Low_DNA,Metadata_Emission_Low_ER,Metadata_Emission_Low_RNA,Metadata_Emission_Low_AGP,Metadata_Emission_Low_Mito,Metadata_Emission_High_DNA,Metadata_Emission_High_ER,Metadata_Emission_High_RNA,Metadata_Emission_High_AGP,Metadata_Emission_High_Mito,Metadata_FPBase_Config
+A,405,488,488,561,640,405,488,488,561,640,422.5,500,581.5,581.5,661.5,467.5,550,618.5,618.5,690.5,http://broad.io/JUMPProductionConfigCV8000
+B,405,488,488,561,640,405,488,488,561,640,435,500,570,570,650,480,550,630,630,760,http://broad.io/JUMPProductionConfigPhenix405
+C,405,488,488,561,640,405,488,488,561,640,422.5,500,661.5,581.5,661.5,467.5,550,690.5,618.5,690.5,http://broad.io/JUMPProductionConfigCV8000
+D,405,488,488,561,640,405,488,488,561,640,422.5,504.5,581.5,581.5,661.5,467.5,539.5,618.5,618.5,690.5,http://broad.io/JUMPProductionConfigCV7000
+E,350,458,511,544,617,404,492,551,576,645,417,516,573,604,672,477,556,613,644,712,http://broad.io/JUMPProductionConfigImageXpress
+F,365,475,510,550,630,365,475,510,550,630,430,500,525,600,655,500,550,580,640,760,http://broad.io/JUMPProductionConfigOperetta
+G,375,488,488,561,640,375,488,488,561,640,435,500,500,570,650,480,550,550,630,760,http://broad.io/JUMPProductionConfigPhenix375
+H,375,488,488,561,640,375,488,488,561,640,435,500,570,570,650,480,550,630,630,760,http://broad.io/JUMPProductionConfigPhenix375
