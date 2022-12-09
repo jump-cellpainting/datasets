@@ -37,7 +37,7 @@ erDiagram
         string Metadata_NCBI_Gene_ID "NCBI gene ID"
         string Metadata_Transcript "NCBI reference sequence"
         string Metadata_Gene_Description "NCBI gene definition"
-        string Metadata_pert_type "One of: trt, control"
+        string Metadata_pert_type "One of: trt, poscon, negcon"
     }
     PLATE }|--|| MICROSCOPE-CONFIG : ""
     MICROSCOPE-CONFIG {
