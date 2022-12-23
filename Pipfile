@@ -4,13 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+"boto3" = "*"
 "fastparquet" = "*"
+"kaleido" = "*"
+"matplotlib" = "*"
 "pandas" = "*"
 "plotly" = "*"
 "pyarrow" = "*"
-"scipy" = "*"
+"requests" = "*"
 "s3fs" = "*"
-"kaleido" = "*"
+"scipy" = "*"
 
 [dev-packages]
 "black" = "*"
