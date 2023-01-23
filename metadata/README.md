@@ -16,7 +16,7 @@ erDiagram
         string Metadata_Source "Data-generating center ID"
         string Metadata_Batch "Batch ID"
         string Metadata_Plate "Plate ID"
-        string Metadata_PlateType "One of: BORTEZOMIB, TARGET1, TARGET2, POSCON8, DMSO, ORF, COMPOUND, COMPOUND_EMPTY"
+        string Metadata_PlateType "One of: TARGET1, TARGET2, POSCON8, DMSO, ORF, COMPOUND, COMPOUND_EMPTY"
     }
     WELL }o--o| COMPOUND : ""
     COMPOUND {
