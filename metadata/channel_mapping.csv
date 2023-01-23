@@ -1,4 +1,4 @@
-Source,channel_n_DNA,channel_n_ER,channel_n_RNA,channel_n_AGP,channel_n_Mito,Brightfield_lowest,Brightfield_middle,Brightfield_highest
+Metadata_Source,Metadata_Channel_Num_DNA,Metadata_Channel_Num_ER,Metadata_Channel_Num_RNA,Metadata_Channel_Num_AGP,Metadata_Channel_Num_Mito,Metadata_Channel_Num_BFLowest,Metadata_Channel_Num_BFMedium,Metadata_Channel_Num_BFHighest
 1,4,1,2,5,3,6,,
 2,1,2,3,4,5,6,7,8
 3,5,4,3,2,1,7,8,6
