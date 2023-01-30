@@ -17,7 +17,7 @@ Currently, this collection comprises 5 datasets:
 ### What’s available now
 
 - All data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) of the three pilots and the reprocessed dataset.
-- Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 11 sources for the principal dataset. Each source corresponds to a uniqe data generating center (except `source_7` and `source_13`, which were from the same center).
+- Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 11 sources for the principal dataset. Each source corresponds to a unique data generating center (except `source_7` and `source_13`, which were from the same center).
 - First draft of [metadata](metadata/README.md) files.
 - A notebook to load and inspect the data currently available in the principal dataset.
 
