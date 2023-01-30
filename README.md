@@ -10,14 +10,14 @@ All the data is hosted on the Cell Painting Gallery on the Registry of Open Data
 
 Currently, this collection comprises 5 datasets:
 
-- The principal dataset of 116k chemical and >15k genetic perturbations the partners created in tandem (`cpg0016`), split across 12 data-generating centers (“sources”). Human U2OS osteosarcoma cells are used.
+- The principal dataset of 116k chemical and >15k genetic perturbations the partners created in tandem (`cpg0016`), split across 12 data-generating centers. Human U2OS osteosarcoma cells are used.
 - 3 pilot datasets created to test: different perturbation conditions (`cpg0000`, including different cell types), staining conditions (`cpg0001`), and microscopes (`cpg0002`).
 - A previously-published dataset of 30k chemical perturbations reprocessed to make it compatible with the rest of the JUMP datasets (`cpg0012`), also in U2OS cells.
 
 ### What’s available now
 
 - All data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) of the three pilots and the reprocessed dataset.
-- Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 6 sources for the principal dataset.
+- Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 11 sources for the principal dataset. Each source corresponds to a unique data generating center (except `source_7` and `source_13`, which were from the same center).
 - First draft of [metadata](metadata/README.md) files.
 - A notebook to load and inspect the data currently available in the principal dataset.
 
