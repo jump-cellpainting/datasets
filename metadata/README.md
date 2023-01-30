@@ -39,6 +39,12 @@ erDiagram
         string Metadata_Gene_Description "NCBI gene definition"
         string Metadata_pert_type "One of: trt, poscon, negcon"
     }
+    WELL }o--o| CRISPR : ""
+    CRISPR {
+        string Metadata_JCP2022 PK "JUMP perturbation ID"
+        string Metadata_Symbol "NCBI gene symbol"
+        string Metadata_NCBI_Gene_ID "NCBI gene ID"
+    }
     PLATE }|--|| MICROSCOPE-CONFIG : ""
     MICROSCOPE-CONFIG {
         string Metadata_Source "Data-generating center ID"
