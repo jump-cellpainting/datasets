@@ -8,11 +8,10 @@ All the data is hosted on the Cell Painting Gallery on the Registry of Open Data
 
 ## Details about the data
 
-Currently, this collection comprises 5 datasets:
+Currently, this collection comprises 4 datasets:
 
 - The principal dataset of 116k chemical and >15k genetic perturbations the partners created in tandem (`cpg0016`), split across 12 data-generating centers. Human U2OS osteosarcoma cells are used.
 - 3 pilot datasets created to test: different perturbation conditions (`cpg0000`, including different cell types), staining conditions (`cpg0001`), and microscopes (`cpg0002`).
-- A previously-published dataset of 30k chemical perturbations reprocessed to make it compatible with the rest of the JUMP datasets (`cpg0012`), also in U2OS cells.
 
 ### What’s available now
 
