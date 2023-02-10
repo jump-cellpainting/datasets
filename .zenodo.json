@@ -2,6 +2,25 @@
     "creators": [
         {
             "name": "The JUMP Cell Painting Consortium"
+            
         }
-    ]
+    ],
+    "title": "The Joint Undertaking for Morpholgical Profiling (JUMP) Consortium Datasets",
+    "upload_type": "dataset", 
+    "access_right": "open", 
+    "related_identifiers": [
+        {
+            "scheme": "doi",
+            "identifier": "10.1101/2022.01.05.475090",
+            "relation": "describes",
+            "resource_type": "publication-preprint"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.1101/2022.07.13.499171",
+            "relation": "describes",
+            "resource_type": "publication-preprint"
+        }
+        
+        ]
 }
