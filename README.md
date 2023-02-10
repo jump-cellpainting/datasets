@@ -58,7 +58,8 @@ Please use the following format to cite this resource as a whole:
 
 _We used the JUMP Cell Painting datasets (Chandrasekaran et al., 2022b), available from the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/))._
 
-For applications which require a DOI, this repository is archived at [Zenodo](https://zenodo.org/record/7628768) automatically upon each release. The permanent DOI is 10.5281/zenodo.7628768 ; individual versions will also be assigned DOIs, see the badge at the top of this README for the most recent DOI. 
+For applications which require a DOI, this repository is archived at https://zenodo.org/record/7628768 automatically upon each release. 
+The permanent DOI is 10.5281/zenodo.7628768; individual versions will also be assigned DOIs, see the badge at the top of this README for the most recent DOI. 
 
 Please note that the JUMP whole-project manuscript (Chandrasekaran et al., 2022b) is currently in preparation.
 
