@@ -58,6 +58,8 @@ Please use the following format to cite this resource as a whole:
 
 _We used the JUMP Cell Painting datasets (Chandrasekaran et al., 2022b), available from the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/))._
 
+For applications which require a DOI, this repository is archived at [Zenodo](link to be added) automatically upon each release. 
+
 Please note that the JUMP whole-project manuscript (Chandrasekaran et al., 2022b) is currently in preparation.
 
 ### Citing individual JUMP datasets
