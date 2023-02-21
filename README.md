@@ -18,7 +18,7 @@ Currently, this collection comprises 4 datasets:
 ### What’s available now
 
 - All data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) of the three pilots and the reprocessed dataset.
-- Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 11 sources for the principal dataset. Each source corresponds to a unique data generating center (except `source_7` and `source_13`, which were from the same center).
+- Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 12 sources for the principal dataset. Each source corresponds to a unique data generating center (except `source_7` and `source_13`, which were from the same center).
 - First draft of [metadata](metadata/README.md) files.
 - A notebook to load and inspect the data currently available in the principal dataset.
 
@@ -58,8 +58,8 @@ Please use the following format to cite this resource as a whole:
 
 _We used the JUMP Cell Painting datasets (Chandrasekaran et al., 2022b), available from the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/))._
 
-For applications which require a DOI, this repository is archived at https://zenodo.org/record/7628768 automatically upon each release. 
-The permanent DOI is 10.5281/zenodo.7628768; individual versions will also be assigned DOIs, see the badge at the top of this README for the most recent DOI. 
+For applications which require a DOI, this repository is archived at <https://zenodo.org/record/7628768> automatically upon each release.
+The permanent DOI is 10.5281/zenodo.7628768; individual versions will also be assigned DOIs, see the badge at the top of this README for the most recent DOI.
 
 Please note that the JUMP whole-project manuscript (Chandrasekaran et al., 2022b) is currently in preparation.
 
@@ -68,11 +68,11 @@ Please note that the JUMP whole-project manuscript (Chandrasekaran et al., 2022b
 To cite individual JUMP Cell Painting datasets, please follow the guidelines in the Cell Painting Gallery citation [guide](https://github.com/broadinstitute/cellpainting-gallery/#citationlicense).
 Examples are as follows:
 
-_We used the dataset cpg0001 (Cimini et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/)._
+_We used the dataset cpg0001 (Cimini et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
 
-_We used the dataset cpg0000 (Chandrasekaran et al., 2022a), available from the Cell Painting Gallery on the Registry of Open Data on AWS (https://registry.opendata.aws/cellpainting-gallery/)._
+_We used the dataset cpg0000 (Chandrasekaran et al., 2022a), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
 
-## Gratitude 
+## Gratitude
 
 Thanks to Consortium Partner scientists for creating this data, from Ksilink, Amgen, AstraZeneca, Bayer, Biogen, the Broad Institute, Eisai, Janssen Pharmaceutica NV, Merck KGaA Darmstadt Germany, Pfizer, Servier, and Takeda.
 
@@ -84,4 +84,4 @@ This work was funded by a major grant from the Massachusetts Life Sciences Cente
 
 Please ask your questions via issues [https://github.com/jump-cellpainting/datasets/issues](https://github.com/jump-cellpainting/dataset/issues).
 
-Keep posted on future data updates by subscribing to our email list, see the button here: https://jump-cellpainting.broadinstitute.org/more-info
+Keep posted on future data updates by subscribing to our email list, see the button here: <https://jump-cellpainting.broadinstitute.org/more-info>
