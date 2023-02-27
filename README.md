@@ -6,7 +6,7 @@ This is a collection of [Cell Painting](https://jump-cellpainting.broadinstitute
 
 This repository contains notebooks and instructions to work with the datasets.
 
-All the data is hosted on the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/)). If you'd like to take a look at (a subset of) the data interactively, Ardigen provides the free, public [JUMP-CP Data Explorer](https://phenaid.ardigen.com/jumpcpexplorer/) to search for similarities between various phenotypes and the corresponding perturbations.
+All the data is hosted on the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/)). If you'd like to take a look at (a subset of) the data interactively, the [JUMP-CP Data Explorer](https://phenaid.ardigen.com/jumpcpexplorer/) by Ardigen and the [JUMP-CP Data Portal](https://www.springdiscovery.com/jump-cp) by Spring Discovery provide portals to do so.
 
 ## Details about the data
 
