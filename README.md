@@ -57,8 +57,8 @@ Please use the following format to cite this resource as a whole:
 
 _We used the JUMP Cell Painting datasets (Chandrasekaran et al., 2023), available from the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/))._
 
-(Chandrasekaran et al., 2023) Chandrasekaran, S. N. et al. JUMP Cell Painting dataset: morphological impact of 136,000 chemical and genetic perturbations. bioRxiv 2023.03.23.534023 (2023) doi:10.1101/2023.03.23.534023
-
+_Chandrasekaran et al., 2023: doi:10.1101/2023.03.23.534023
+_
 ### Citing individual JUMP datasets
 
 To cite individual JUMP Cell Painting datasets, please follow the guidelines in the Cell Painting Gallery citation [guide](https://github.com/broadinstitute/cellpainting-gallery/#citationlicense).
