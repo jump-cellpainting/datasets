@@ -26,7 +26,7 @@ Currently, this collection comprises 4 datasets:
 
 ### What’s coming up
 
-- Extending the metadata and notebooks to the three pilots and the reprocessed dataset so that all these datasets can be quickly loaded together.
+- Extending the metadata and notebooks to the three pilots so that all these datasets can be quickly loaded together.
 - Curated annotations for the compounds, obtained from [ChEMBL](https://www.ebi.ac.uk/chembl/) and other sources.
 - The remaining data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) (normalized profiles, feature selected profiles, treatment-level consensus profiles, quality control results) and the one remaining source for the principal dataset.
 - Deep learning [embeddings](https://tfhub.dev/google/imagenet/efficientnet_v2_imagenet1k_s/feature_vector/2) using a pre-trained neural network for all 4 datasets.
