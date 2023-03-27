@@ -17,21 +17,20 @@ Currently, this collection comprises 4 datasets:
 
 ### What’s available now
 
-- All data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) of the three pilots and the reprocessed dataset.
+- All data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) of the three pilots.
 - Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 12 sources for the principal dataset. Each source corresponds to a unique data generating center (except `source_7` and `source_13`, which were from the same center).
 - First draft of [metadata](metadata/README.md) files.
 - A notebook to load and inspect the data currently available in the principal dataset.
 
-**Please note: At present in the principal dataset (`cpg0016`), many compounds will be missing replicates, and a full QC of the dataset is pending. We don’t recommend performing any analysis with the principal dataset until all the remaining components and all sources are uploaded and the full QC of the dataset is complete. The other datasets are complete.**
+**Please note: At present in the principal dataset (`cpg0016`), some compounds will be missing replicates, and a full QC of the dataset is pending. We don’t recommend performing any analysis with the principal dataset the full QC of the dataset is complete. The other datasets are complete.**
 
 ### What’s coming up
 
-- Extending the metadata and notebooks to the three pilots and the reprocessed dataset so that all these datasets can be quickly loaded together.
+- Extending the metadata and notebooks to the three pilots so that all these datasets can be quickly loaded together.
 - Curated annotations for the compounds, obtained from [ChEMBL](https://www.ebi.ac.uk/chembl/) and other sources.
-- The remaining data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) (normalized profiles, feature selected profiles, treatment-level consensus profiles, quality control results) and the remaining sources for the principal dataset.
-- Deep learning [embeddings](https://tfhub.dev/google/imagenet/efficientnet_v2_imagenet1k_s/feature_vector/2) using a pre-trained neural network for all 5 datasets.
+- The remaining data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) (normalized profiles, feature selected profiles, treatment-level consensus profiles, quality control results) and the one remaining source for the principal dataset.
+- Deep learning [embeddings](https://tfhub.dev/google/imagenet/efficientnet_v2_imagenet1k_s/feature_vector/2) using a pre-trained neural network for all 4 datasets.
 - [Quality control](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md#quality_control-folder-structure) results at the image level for the principal dataset to allow removing bad images.
-- Our manuscript, Chandrasekaran et al., 2022b, which is being approved by pharmaceutical company partners and will be released on bioRxiv.
 
 ## How to load the data: notebooks and folder structure
 
@@ -56,12 +55,9 @@ All the data is released with CC0 1.0 Universal (CC0 1.0).
 Still, professional ethics require that you cite the associated publication.
 Please use the following format to cite this resource as a whole:
 
-_We used the JUMP Cell Painting datasets (Chandrasekaran et al., 2022b), available from the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/))._
+_We used the JUMP Cell Painting datasets (Chandrasekaran et al., 2023), available from the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/))._
 
-For applications which require a DOI, this repository is archived at <https://zenodo.org/record/7628768> automatically upon each release.
-The permanent DOI is 10.5281/zenodo.7628768; individual versions will also be assigned DOIs, see the badge at the top of this README for the most recent DOI.
-
-Please note that the JUMP whole-project manuscript (Chandrasekaran et al., 2022b) is currently in preparation.
+_Chandrasekaran et al., 2023: doi:10.1101/2023.03.23.534023_
 
 ### Citing individual JUMP datasets
 
@@ -70,7 +66,7 @@ Examples are as follows:
 
 _We used the dataset cpg0001 (Cimini et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
 
-_We used the dataset cpg0000 (Chandrasekaran et al., 2022a), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
+_We used the dataset cpg0000 (Chandrasekaran et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
 
 ## Gratitude
 
