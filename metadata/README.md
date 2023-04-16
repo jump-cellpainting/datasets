@@ -24,6 +24,16 @@ erDiagram
         string Metadata_InChI "International Chemical ID"
         string Metadata_InChIKey "Hashed InChI"
     }
+    COMPOUND |o--o{ COMPOUND_REPHUB_ANNOT : ""
+    COMPOUND_REPHUB_ANNOT {
+        string Metadata_InChIKey "Hashed InChI"
+        string Metadata_pert_iname "Perturbation Name"
+        string Metadata_clinical_phase "Clinical Phase"
+        string Metadata_moa "Mechanism of Action"
+        string Metadata_target "Molecular Target"
+        string Metadata_disease_area "Disease Area"
+        string Metadata_indication "Indication"
+    }
     WELL }o--o| ORF : ""
     ORF {
         string Metadata_JCP2022 PK "JUMP perturbation ID"
