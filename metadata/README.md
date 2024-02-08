@@ -81,17 +81,5 @@ erDiagram
     CELLPROFILER-VERSION {
         string Metadata_Source "Data-generating center ID"
         string Metadata_CellProfiler_Version "CellProfiler Version"
-    }    
-    PLATE }|--|| CHANNEL-MAPPING : ""
-    CHANNEL-MAPPING {
-        string Metadata_Source "Data-generating center ID"
-        int Metadata_Channel_Num_DNA "DNA channel number"
-        int Metadata_Channel_Num_ER "ER channel number"
-        int Metadata_Channel_Num_RNA "RNA channel number"
-        int Metadata_Channel_Num_AGP "AGP channel number"
-        int Metadata_Channel_Num_Mito "Mito channel number"
-        int Metadata_Channel_Num_BFLowest "Brightfield-Lowest channel number"
-        int Metadata_Channel_Num_BFMedium "Brightfield-Medium channel number"
-        int Metadata_Channel_Num_BFHighest "Brightfield-Highest channel number"
-    }    
+    } 
 ```
