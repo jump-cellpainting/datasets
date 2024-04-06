@@ -25,6 +25,11 @@ erDiagram
         string Metadata_InChIKey "Hashed InChI"
         string Metadata_SMILES "SMILES"
     }
+    COMPOUND }o--o| COMPOUND_SOURCE : ""
+    COMPOUND_SOURCE {
+        string Metadata_JCP2022 "JUMP perturbation ID"
+        string Metadata_Compound_Source "Compound-nominating centerID"
+    }
     WELL }o--o| ORF : ""
     ORF {
         string Metadata_JCP2022 PK "JUMP perturbation ID"
