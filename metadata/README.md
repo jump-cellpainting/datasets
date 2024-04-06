@@ -23,6 +23,7 @@ erDiagram
         string Metadata_JCP2022 PK "JUMP perturbation ID"
         string Metadata_InChI "International Chemical ID"
         string Metadata_InChIKey "Hashed InChI"
+        string Metadata_SMILES "SMILES"
     }
     WELL }o--o| ORF : ""
     ORF {
@@ -87,5 +88,5 @@ erDiagram
     CELLPROFILER-VERSION {
         string Metadata_Source "Data-generating center ID"
         string Metadata_CellProfiler_Version "CellProfiler Version"
-    } 
+    }
 ```
