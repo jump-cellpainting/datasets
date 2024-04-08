@@ -26,11 +26,10 @@ Currently, this collection comprises 4 datasets:
 
 ### What’s coming up
 
-- Extending the metadata and notebooks to the three pilots so that all these datasets can be quickly loaded together.
-- Curated annotations for the compounds, obtained from [ChEMBL](https://www.ebi.ac.uk/chembl/) and other sources.
-- The remaining data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) (normalized profiles, feature selected profiles, treatment-level consensus profiles, quality control results) and the one remaining source for the principal dataset.
-- Deep learning [embeddings](https://tfhub.dev/google/imagenet/efficientnet_v2_imagenet1k_s/feature_vector/2) using a pre-trained neural network for all 4 datasets.
-- [Quality control](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md#quality_control-folder-structure) results at the image level for the principal dataset to allow removing bad images.
+- Extending the metadata and notebooks to the three pilots so that all these datasets can be quickly loaded together ([issue](https://github.com/jump-cellpainting/datasets-private/issues/93)).
+- Curated annotations for the compounds, obtained from [ChEMBL](https://www.ebi.ac.uk/chembl/) and other sources ([issue](https://github.com/jump-cellpainting/datasets-private/issues/78)).
+- The remaining data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) (normalized profiles, feature selected profiles, treatment-level consensus profiles, quality control results) ([issue](https://github.com/jump-cellpainting/datasets-private/issues/79)).
+- Deep learning [embeddings](https://tfhub.dev/google/imagenet/efficientnet_v2_imagenet1k_s/feature_vector/2) using a pre-trained neural network for all 4 datasets ([issue](https://github.com/jump-cellpainting/datasets-private/issues/50)).
 
 ## How to load the data: notebooks and folder structure
 
@@ -46,6 +45,9 @@ To get set up to run the notebook, first install the python dependencies and act
 
 See the typical [folder structure](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) for datasets in the Cell Painting Gallery.
 Please [note](README.md#whats-available-now) that not all components are currently available.
+
+
+https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html
 
 ## Citation/license
 
