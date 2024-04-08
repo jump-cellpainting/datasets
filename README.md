@@ -20,7 +20,7 @@ Currently, this collection comprises 4 datasets:
 - All data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) of the three pilots.
 - Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 12 sources for the principal dataset. Each source corresponds to a unique data generating center (except `source_7` and `source_13`, which were from the same center).
 - First draft of [metadata](metadata/README.md) files.
-- A notebook to load and inspect the data currently available in the principal dataset.
+- A [notebook](https://github.com/jump-cellpainting/datasets/blob/update-readme/sample_notebook.ipynb) to load and inspect the data currently available in the principal dataset.
 
 **Please note: At present in the principal dataset (`cpg0016`), some compounds will be missing replicates, and a full QC of the dataset is pending. We don’t recommend performing any analysis with the principal dataset the full QC of the dataset is complete. The other datasets are complete.**
 
@@ -46,8 +46,7 @@ To get set up to run the notebook, first install the python dependencies and act
 See the typical [folder structure](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) for datasets in the Cell Painting Gallery.
 Please [note](README.md#whats-available-now) that not all components are currently available.
 
-
-https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html
+This new resource https://broad.io/jump will include vignettes demonstrating how to work with JUMP data. Currently, it contains one [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) which demonstrates how to load the different subsets of data within `cpg0016`. 
 
 ## Citation/license
 
