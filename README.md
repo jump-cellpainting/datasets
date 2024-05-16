@@ -21,6 +21,7 @@ Currently, this collection comprises 4 datasets:
 - Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 12 sources for the principal dataset. Each source corresponds to a unique data generating center (except `source_7` and `source_13`, which were from the same center).
 - First draft of [metadata](metadata/README.md) files.
 - A [notebook](https://github.com/jump-cellpainting/datasets/blob/update-readme/sample_notebook.ipynb) to load and inspect the data currently available in the principal dataset.
+- A [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) to load the different subsets of data in the principal dataset, each available as a single dataframe. The URLs to the subsets are [here](https://github.com/jump-cellpainting/datasets/blob/main/profiles_index.csv). Snakemake workflows for producing these assembled profiles are available [here](https://github.com/broadinstitute/jump-profiling-recipe/releases/tag/v0.1.0).
 
 **Please note: At present in the principal dataset (`cpg0016`), some compounds will be missing replicates, and a full QC of the dataset is pending. We don’t recommend performing any analysis with the principal dataset the full QC of the dataset is complete. The other datasets are complete.**
 
