@@ -19,17 +19,14 @@ Currently, this collection comprises 4 datasets:
 
 - All data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) of the three pilots.
 - Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 12 sources for the principal dataset. Each source corresponds to a unique data generating center (except `source_7` and `source_13`, which were from the same center).
-- First draft of [metadata](metadata/README.md) files.
+- All key [metadata](metadata/README.md) files.
 - A [notebook](https://github.com/jump-cellpainting/datasets/blob/update-readme/sample_notebook.ipynb) to load and inspect the data currently available in the principal dataset.
-- A [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) to load the different subsets of data in the principal dataset, each available as a single dataframe. The URLs to the subsets are [here](https://github.com/jump-cellpainting/datasets/blob/main/profiles_index.csv). Snakemake workflows for producing these assembled profiles are available [here](https://github.com/broadinstitute/jump-profiling-recipe/releases/tag/v0.1.0).
-
-**Please note: At present in the principal dataset (`cpg0016`), some compounds will be missing replicates, and a full QC of the dataset is pending. We don’t recommend performing any analysis with the principal dataset the full QC of the dataset is complete. The other datasets are complete.**
+- A [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) to load the different subsets of data in the principal dataset, each available as a single dataframe. The URLs to the subsets are [here](https://github.com/jump-cellpainting/datasets/blob/main/profile_index.csv). The corresponding folders for each contain all the data levels (e.g. this [folder](https://cellpainting-gallery.s3.amazonaws.com/index.html#cpg0016-jump-assembled/source_all/workspace/profiles/jump-profiling-recipe_2024_a917fa7/ORF/profiles_wellpos_cc_var_mad_outlier_featselect_sphering_harmony/)). Snakemake workflows for producing these assembled profiles are available [here](https://github.com/broadinstitute/jump-profiling-recipe/releases/tag/v0.1.0).
 
 ### What’s coming up
 
 - Extending the metadata and notebooks to the three pilots so that all these datasets can be quickly loaded together ([issue](https://github.com/jump-cellpainting/datasets-private/issues/93)).
 - Curated annotations for the compounds, obtained from [ChEMBL](https://www.ebi.ac.uk/chembl/) and other sources ([issue](https://github.com/jump-cellpainting/datasets-private/issues/78)).
-- The remaining data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) (normalized profiles, feature selected profiles, treatment-level consensus profiles, quality control results) ([issue](https://github.com/jump-cellpainting/datasets-private/issues/79)).
 - Deep learning [embeddings](https://tfhub.dev/google/imagenet/efficientnet_v2_imagenet1k_s/feature_vector/2) using a pre-trained neural network for all 4 datasets ([issue](https://github.com/jump-cellpainting/datasets-private/issues/50)).
 
 ## How to load the data: notebooks and folder structure
@@ -45,7 +42,6 @@ To get set up to run the notebook, first install the python dependencies and act
    ```
 
 See the typical [folder structure](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) for datasets in the Cell Painting Gallery.
-Please [note](README.md#whats-available-now) that not all components are currently available.
 
 This new resource https://broad.io/jump will include vignettes demonstrating how to work with JUMP data. Currently, it contains one [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) which demonstrates how to load the different subsets of data within `cpg0016`. 
 
