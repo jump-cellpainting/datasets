@@ -8,6 +8,9 @@ This repository contains notebooks and instructions to work with the datasets.
 
 All the data is hosted on the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/)). If you'd like to take a look at (a subset of) the data interactively, the [JUMP-CP Data Explorer](https://phenaid.ardigen.com/jumpcpexplorer/) by Ardigen and the [JUMP-CP Data Portal](https://www.springdiscovery.com/jump-cp) by Spring Discovery provide portals to do so.
 
+## Quick access
+You can find the index with the specific location on ([this](https://zenodo.org/records/13146273/latest)) Zenodo location. It also contains the ETags so you can check for file integrity.
+
 ## Details about the data
 
 Currently, this collection comprises 4 datasets:

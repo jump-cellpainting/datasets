@@ -1,7 +1,7 @@
 # Find the latest version of the dataset
 ZENODO_ENDPOINT="https://zenodo.org"
 DEPOSITION_PREFIX="${ZENODO_ENDPOINT}/api/deposit/depositions"
-ORIGINAL_ID=""
+ORIGINAL_ID="13146273"
 FILE_TO_VERSION="profile_index.csv"
 
 echo "Checking that S3 ETags match their local counterpart"
