@@ -3,7 +3,6 @@
   inputs = {
     dream2nix.url = "github:nix-community/dream2nix";
     nixpkgs.follows = "dream2nix/nixpkgs";
-    nixpkgs_master.url = "github:NixOS/nixpkgs/master";
     flake-utils.url = "github:numtide/flake-utils";
     systems.url = "github:nix-systems/default";
     devenv.url = "github:cachix/devenv";
@@ -18,17 +17,8 @@
           config.allowUnfree = true;
         };
 
-        mpkgs = import inputs.nixpkgs_master {
-          system = system;
-          config.allowUnfree = true;
-        };
-
       in  {
-        devShells = 
-          let
-            python_with_pkgs = (pkgs.python310.withPackages(pp: []));
-          in
-            with pkgs;
+        devShells = with pkgs;
             {
               default = pkgs.mkShell {
                 packages = [
