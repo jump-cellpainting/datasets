@@ -43,7 +43,7 @@ To get set up to run the notebook, first install the python dependencies and act
 
 See the typical [folder structure](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) for datasets in the Cell Painting Gallery.
 
-This new resource https://broad.io/jump will include vignettes demonstrating how to work with JUMP data. Currently, it contains one [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) which demonstrates how to load the different subsets of data within `cpg0016`. 
+This new resource <https://broad.io/jump> will include vignettes demonstrating how to work with JUMP data. Currently, it contains one [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) which demonstrates how to load the different subsets of data within `cpg0016`.
 
 ## Citation/license
 
@@ -53,18 +53,18 @@ All the data is released with CC0 1.0 Universal (CC0 1.0).
 Still, professional ethics require that you cite the associated publication.
 Please use the following format to cite this resource as a whole:
 
-_We used the JUMP Cell Painting datasets (Chandrasekaran et al., 2023), available from the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/))._
-
-_Chandrasekaran et al., 2023: doi:10.1101/2023.03.23.534023_
+> _We used the JUMP Cell Painting datasets (Chandrasekaran et al., 2023), available from the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/))._
+>
+> _Chandrasekaran et al., 2023: doi:10.1101/2023.03.23.534023_
 
 ### Citing individual JUMP datasets
 
 To cite individual JUMP Cell Painting datasets, please follow the guidelines in the Cell Painting Gallery citation [guide](https://github.com/broadinstitute/cellpainting-gallery/#citationlicense).
 Examples are as follows:
 
-_We used the dataset cpg0001 (Cimini et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
-
-_We used the dataset cpg0000 (Chandrasekaran et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
+> _We used the dataset cpg0001 (Cimini et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
+>
+> _We used the dataset cpg0000 (Chandrasekaran et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
 
 ## Gratitude
 
