@@ -26,6 +26,6 @@ jobs:
 
             - name: Run command in flake environment
               run: |
-                  nix develop . --accept-flake-config --impure --command bash src/upload_index.sh
+                  nix develop . --accept-flake-config --impure --command bash manifests/src/upload_index.sh
               env:
-                ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+                  ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
