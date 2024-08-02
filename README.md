@@ -21,7 +21,7 @@ Currently, this collection comprises 4 datasets:
 - Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 12 sources for the principal dataset. Each source corresponds to a unique data generating center (except `source_7` and `source_13`, which were from the same center).
 - First draft of [metadata](metadata/README.md) files.
 - A [notebook](https://github.com/jump-cellpainting/datasets/blob/update-readme/sample_notebook.ipynb) to load and inspect the data currently available in the principal dataset.
-- A [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) to load the different subsets of data in the principal dataset, each available as a single dataframe. The URLs to the subsets are [here](https://github.com/jump-cellpainting/datasets/blob/main/profiles_index.csv). Snakemake workflows for producing these assembled profiles are available [here](https://github.com/broadinstitute/jump-profiling-recipe/releases/tag/v0.1.0).
+- A [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) to load the different subsets of data in the principal dataset, each available as a single dataframe. The URLs to the subsets are [here](https://github.com/jump-cellpainting/datasets/blob/main/manifests/profiles_index.csv) and indexed [here](https://zenodo.org/records/13146273/latest) on Zenodo; [ETags](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Object.html) are included to enable integrity checks. Snakemake workflows for producing these assembled profiles are available [here](https://github.com/broadinstitute/jump-profiling-recipe/releases/tag/v0.1.0).
 
 **Please note: At present in the principal dataset (`cpg0016`), some compounds will be missing replicates, and a full QC of the dataset is pending. We don’t recommend performing any analysis with the principal dataset the full QC of the dataset is complete. The other datasets are complete.**
 
@@ -47,7 +47,7 @@ To get set up to run the notebook, first install the python dependencies and act
 See the typical [folder structure](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) for datasets in the Cell Painting Gallery.
 Please [note](README.md#whats-available-now) that not all components are currently available.
 
-This new resource https://broad.io/jump will include vignettes demonstrating how to work with JUMP data. Currently, it contains one [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) which demonstrates how to load the different subsets of data within `cpg0016`. 
+This new resource <https://broad.io/jump> will include vignettes demonstrating how to work with JUMP data. Currently, it contains one [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) which demonstrates how to load the different subsets of data within `cpg0016`.
 
 ## Citation/license
 
@@ -57,18 +57,18 @@ All the data is released with CC0 1.0 Universal (CC0 1.0).
 Still, professional ethics require that you cite the associated publication.
 Please use the following format to cite this resource as a whole:
 
-_We used the JUMP Cell Painting datasets (Chandrasekaran et al., 2023), available from the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/))._
-
-_Chandrasekaran et al., 2023: doi:10.1101/2023.03.23.534023_
+> _We used the JUMP Cell Painting datasets (Chandrasekaran et al., 2023), available from the Cell Painting Gallery on the Registry of Open Data on AWS ([https://registry.opendata.aws/cellpainting-gallery/](https://registry.opendata.aws/cellpainting-gallery/))._
+>
+> _Chandrasekaran et al., 2023: doi:10.1101/2023.03.23.534023_
 
 ### Citing individual JUMP datasets
 
 To cite individual JUMP Cell Painting datasets, please follow the guidelines in the Cell Painting Gallery citation [guide](https://github.com/broadinstitute/cellpainting-gallery/#citationlicense).
 Examples are as follows:
 
-_We used the dataset cpg0001 (Cimini et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
-
-_We used the dataset cpg0000 (Chandrasekaran et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
+> _We used the dataset cpg0001 (Cimini et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
+>
+> _We used the dataset cpg0000 (Chandrasekaran et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
 
 ## Gratitude
 
