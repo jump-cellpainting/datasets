@@ -66,9 +66,9 @@ Please use the following format to cite this resource as a whole:
 To cite individual JUMP Cell Painting datasets, please follow the guidelines in the Cell Painting Gallery citation [guide](https://github.com/broadinstitute/cellpainting-gallery/#citationlicense).
 Examples are as follows:
 
-_We used the dataset cpg0001 (Cimini et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
-
-_We used the dataset cpg0000 (Chandrasekaran et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
+> _We used the dataset cpg0001 (Cimini et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
+>
+> _We used the dataset cpg0000 (Chandrasekaran et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<https://registry.opendata.aws/cellpainting-gallery/>)._
 
 ## Gratitude
 
