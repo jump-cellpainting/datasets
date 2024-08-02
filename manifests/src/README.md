@@ -1,13 +1,14 @@
 # Automated versioning with Zenodo
 
-The scripts in this folder enable automated versioning by uploading the `profile_index.csv` file to Zenodo when it is updated in this repository.
+The scripts in this folder are used for automated versioning by uploading the manifest file (`profile_index.csv`, currently the only one in the root folder) to Zenodo.
+In the future, additional manifest files will be added and updated in this repository, triggering the same automated versioning process.
 
 ## Updating new versions
 
 To release a new set of assembled JUMP profiles, manually update the URLs in `profile_index.csv` to point to the new location.
 If necessary, update the associated names for new dataset types.
 
-## Update ETags to Reflect New URLs
+## Update ETags to reflect new URLs
 
 After updating a URL, the ETag (provided by S3) will no longer match. To update the ETags, run the following command from the home folder:
 
