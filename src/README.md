@@ -20,4 +20,3 @@ Note: If using Nix, all dependencies are already included in the flake at the ro
 ## Commit changes
 
 Add and commit the updated `profile_index.csv`. This  should trigger an update on Zenodo. Once the update is complete, the csv files in the repository and on Zenodo should match.
-
