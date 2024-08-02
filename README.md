@@ -28,6 +28,7 @@ Currently, this collection comprises 4 datasets:
 - Extending the metadata and notebooks to the three pilots so that all these datasets can be quickly loaded together ([issue](https://github.com/jump-cellpainting/datasets-private/issues/93)).
 - Curated annotations for the compounds, obtained from [ChEMBL](https://www.ebi.ac.uk/chembl/) and other sources ([issue](https://github.com/jump-cellpainting/datasets-private/issues/78)).
 - Deep learning [embeddings](https://tfhub.dev/google/imagenet/efficientnet_v2_imagenet1k_s/feature_vector/2) using a pre-trained neural network for all 4 datasets ([issue](https://github.com/jump-cellpainting/datasets-private/issues/50)).
+- Methods and tools to simplify access to the data/metadata ([`cpgdata`](https://github.com/broadinstitute/cpg/tree/main/cpgdata), [`jump-portraits`](https://github.com/broadinstitute/monorepo/tree/main/libs/jump_portrait), [`jump-babel`](https://github.com/broadinstitute/monorepo/tree/main/libs/jump_babel)).
 
 ## How to load the data: notebooks and folder structure
 
