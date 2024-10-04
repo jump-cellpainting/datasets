@@ -34,20 +34,9 @@ This collection comprises 4 datasets:
 
 ## How to load the data: notebooks and folder structure
 
-*Note:* This new resource <https://broad.io/jump> include vignettes demonstrating how to work with JUMP data, and we recommend using those to get started.
-
-See the [sample notebook](sample_notebook.ipynb) to learn more about how to load the data in the principal dataset.
-
-To get set up to run the notebook, first install the python dependencies and activate the virtual environment
-
-   ```bash
-   # install pipenv if you don't have it already https://pipenv.pypa.io/en/latest/#install-pipenv-today
-   pipenv install
-   pipenv shell
-   ```
+This new resource <https://broad.io/jump> include vignettes demonstrating how to work with JUMP data.
 
 See the typical [folder structure](https://github.com/broadinstitute/cellpainting-gallery/blob/main/documentation/data_structure.md) for datasets in the Cell Painting Gallery.
-
 
 ## Citation/license
 
