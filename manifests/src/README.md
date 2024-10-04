@@ -16,7 +16,7 @@ After updating a URL, the ETag (provided by S3) will no longer match. To update 
 bash manifests/src/update_etags.sh manifests/profile_index.csv| sponge manifests/profile_index.csv
 ```
 
-Note: If using Nix, all dependencies are already included in the flake at the root folder. Simply run `nix develop` before the above command.
+Note: If using Nix, all dependencies are already included in the flake at the root folder. Simply run `nix develop --extra-experimental-features nix-command --extra-experimental-features flakes` before the above command.
 
 ## Commit changes
 
