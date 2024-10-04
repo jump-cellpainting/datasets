@@ -1,8 +1,9 @@
 # Find the latest version of the dataset
 ZENODO_ENDPOINT="https://zenodo.org"
 DEPOSITION_PREFIX="${ZENODO_ENDPOINT}/api/deposit/depositions"
-ORIGINAL_ID="13146273"
+ORIGINAL_ID="13892061"
 FILE_TO_VERSION="manifests/profile_index.csv"
+FILENAME=$(echo ${FILE_TO_VERSION} | sed 's+.*/++g')
 
 echo "Checking that S3 ETags match their local counterpart"
 S3_ETAGS=$(cat ${FILE_TO_VERSION} | tail -n +2 | cut -f2 -d',' | xargs -I {} -- curl -I --silent "{}" | grep ETag | awk '{print $2}' | sed 's/\r$//' | md5sum | cut -f1 -d" ")
@@ -27,7 +28,7 @@ else # Update existing dataset
     LOCAL_HASH=$(md5sum ${FILE_TO_VERSION} | cut -f1 -d" ")
 
     echo "Checking for changes in file contents: Remote ${REMOTE_HASH} vs Local ${LOCAL_HASH}"
-    if [ "${REMOTE_HASH}" = "${LOCAL_HASH}" ]; then
+    if [ "${REMOTE_HASH}" == "${LOCAL_HASH}" ]; then
 	echo "The urls and md5sums have not changed"
 	exit 0
     fi
@@ -54,7 +55,7 @@ DEPOSITION=$(curl -H "Content-Type: application/json" \
 echo "New deposition ID is ${DEPOSITION}"
 
 # Variables
-BUCKET_DATA=$(curl "${DEPOSITION_PREFIX}/$DEPOSITION?access_token=$ZENODO_TOKEN")
+BUCKET_DATA=$(curl "${DEPOSITION_PREFIX}/${DEPOSITION}?access_token=${ZENODO_TOKEN}")
 BUCKET=$(echo "${BUCKET_DATA}" | jq --raw-output .links.bucket)
 
 if [ "${BUCKET}" = "null" ]; then
@@ -64,10 +65,11 @@ if [ "${BUCKET}" = "null" ]; then
 fi
 
 # Upload file
-echo "Uploading file to bucket ${BUCKET}"
+echo "Uploading file ${FILE_TO_VERSION} to bucket ${BUCKET}"
+cat ${FILE_TO_VERSION}
 curl -o /dev/null \
      --upload-file ${FILE_TO_VERSION} \
-     ${BUCKET}/${FILE_TO_VERSION}?access_token="${ZENODO_TOKEN}"
+     ${BUCKET}/${FILENAME}?access_token="${ZENODO_TOKEN}"
 
 
 # Upload Metadata

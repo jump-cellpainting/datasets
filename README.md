@@ -24,6 +24,8 @@ This collection comprises 4 datasets:
 - Different subsets of data in the principal dataset, assembled into single parquet files. The URLs to the subsets are [here](https://github.com/jump-cellpainting/datasets/blob/main/manifests/profile_index.csv). The corresponding folders for each contain all the data levels (e.g. this [folder](https://cellpainting-gallery.s3.amazonaws.com/index.html#cpg0016-jump-assembled/source_all/workspace/profiles/jump-profiling-recipe_2024_a917fa7/ORF/profiles_wellpos_cc_var_mad_outlier_featselect_sphering_harmony/)). Snakemake workflows for producing these assembled profiles are available [here](https://github.com/broadinstitute/jump-profiling-recipe/releases/tag/v0.1.0). We recommend working with the the `all` or `all_interpretable` subsets -- they contain all three data modalities in single dataframe. Note that cross-modality matching is still poor (ORF-CRISPR, COMPOUND-CRISPR, COMPOUND-ORF), but within modality generally works well. 
 - A [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/1_retrieve_profiles.html) to load these subsets of data.
 - Other [tutorials](https://broad.io/jump) to work with `cpg0016`.
+- The datasets and their DOI can be found on this [Zenodo](https://zenodo.org/records/13892061/latest) record.
+- Multiple datasets of interest for JUMP are available on our [Zenodo](https://zenodo.org/communities/broad-imaging/records?q=&l=list&p=1&s=10&sort=newest) community.
 
 ### What’s coming up
 
