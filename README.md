@@ -10,18 +10,20 @@ All the data is hosted on the Cell Painting Gallery on the Registry of Open Data
 
 ## Details about the data
 
-Currently, this collection comprises 4 datasets:
+This collection comprises 4 datasets:
 
 - The principal dataset of 116k chemical and >15k genetic perturbations the partners created in tandem (`cpg0016`), split across 12 data-generating centers. Human U2OS osteosarcoma cells are used.
 - 3 pilot datasets created to test: different perturbation conditions (`cpg0000`, including different cell types), staining conditions (`cpg0001`), and microscopes (`cpg0002`).
 
 ### What’s available now
 
-- All data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) of the three pilots.
+- All data [components](https://github.com/broadinstitute/cellpainting-gallery/blob/main/documentation/data_structure.md) of the three pilots.
 - Most data components (images, raw CellProfiler output, single-cell profiles, aggregated CellProfiler profiles) from 12 sources for the principal dataset. Each source corresponds to a unique data generating center (except `source_7` and `source_13`, which were from the same center).
 - All key [metadata](metadata/README.md) files.
-- A [notebook](https://github.com/jump-cellpainting/datasets/blob/update-readme/sample_notebook.ipynb) to load and inspect the data currently available in the principal dataset.
-- A [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) to load the different subsets of data in the principal dataset, each available as a single dataframe. The URLs to the subsets are [here](https://github.com/jump-cellpainting/datasets/blob/main/profile_index.csv). The corresponding folders for each contain all the data levels (e.g. this [folder](https://cellpainting-gallery.s3.amazonaws.com/index.html#cpg0016-jump-assembled/source_all/workspace/profiles/jump-profiling-recipe_2024_a917fa7/ORF/profiles_wellpos_cc_var_mad_outlier_featselect_sphering_harmony/)). Snakemake workflows for producing these assembled profiles are available [here](https://github.com/broadinstitute/jump-profiling-recipe/releases/tag/v0.1.0).
+- A [notebook](https://github.com/jump-cellpainting/datasets/blob/main/sample_notebook.ipynb) to load and inspect the data currently available in the principal dataset.
+- Different subsets of data in the principal dataset, assembled into single parquet files. The URLs to the subsets are [here](https://github.com/jump-cellpainting/datasets/blob/main/manifests/profile_index.csv). The corresponding folders for each contain all the data levels (e.g. this [folder](https://cellpainting-gallery.s3.amazonaws.com/index.html#cpg0016-jump-assembled/source_all/workspace/profiles/jump-profiling-recipe_2024_a917fa7/ORF/profiles_wellpos_cc_var_mad_outlier_featselect_sphering_harmony/)). Snakemake workflows for producing these assembled profiles are available [here](https://github.com/broadinstitute/jump-profiling-recipe/releases/tag/v0.1.0). We recommend working with the the `all` or `all_interpretable` subsets -- they contain all three data modalities in single dataframe. Note that cross-modality matching is still poor (ORF-CRISPR, COMPOUND-CRISPR, COMPOUND-ORF), but within modality generally works well. 
+- A [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/1_retrieve_profiles.html) to load these subsets of data.
+- Other [tutorials](https://broad.io/jump) to work with `cpg0016`.
 
 ### What’s coming up
 
@@ -32,19 +34,9 @@ Currently, this collection comprises 4 datasets:
 
 ## How to load the data: notebooks and folder structure
 
-See the [sample notebook](sample_notebook.ipynb) to learn more about how to load the data in the principal dataset.
+This new resource <https://broad.io/jump> include vignettes demonstrating how to work with JUMP data.
 
-To get set up to run the notebook, first install the python dependencies and activate the virtual environment
-
-   ```bash
-   # install pipenv if you don't have it already https://pipenv.pypa.io/en/latest/#install-pipenv-today
-   pipenv install
-   pipenv shell
-   ```
-
-See the typical [folder structure](https://github.com/broadinstitute/cellpainting-gallery/blob/main/folder_structure.md) for datasets in the Cell Painting Gallery.
-
-This new resource <https://broad.io/jump> will include vignettes demonstrating how to work with JUMP data. Currently, it contains one [tutorial](https://broadinstitute.github.io/2023_12_JUMP_data_only_vignettes/howto/tutorial_basic.html) which demonstrates how to load the different subsets of data within `cpg0016`.
+See the typical [folder structure](https://github.com/broadinstitute/cellpainting-gallery/blob/main/documentation/data_structure.md) for datasets in the Cell Painting Gallery.
 
 ## Citation/license
 
