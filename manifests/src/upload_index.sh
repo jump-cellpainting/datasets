@@ -33,7 +33,6 @@ done <<< "${urls}"
 
 # Remove the trailing newline from s3_etags
 s3_etags=$(echo -e "${s3_etags}" | sed '/^$/d')
-echo $s3_etags
 
 # Calculate checksums for comparison
 s3_etags_hash=$(echo -e "${s3_etags}" | md5sum | cut -f1 -d" ")
