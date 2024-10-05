@@ -27,10 +27,8 @@ local_etags=$(csvcut -c "etag" "${FILE_TO_VERSION}" | tail -n +2)
 
 s3_etags=""
 while IFS= read -r url; do
-  etag=$(curl -I --silent "$url" | awk '/[eE][tT]ag:/ {print $2}' | tr -d '
-"')
-  s3_etags+="${etag}
-"
+  etag=$(curl -I --silent "$url" | awk '/[eE][tT]ag:/ {print $2}' | tr -d '\r"')
+  s3_etags+="${etag}\n"
 done <<< "${urls}"
 
 # Remove the trailing newline from s3_etags
