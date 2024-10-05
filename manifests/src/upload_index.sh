@@ -1,13 +1,45 @@
 # Find the latest version of the dataset
-ZENODO_ENDPOINT="https://zenodo.org"
-DEPOSITION_PREFIX="${ZENODO_ENDPOINT}/api/deposit/depositions"
 ORIGINAL_ID="13892061"
 FILE_TO_VERSION="manifests/profile_index.csv"
+METADATA_JSON='{
+  "metadata": {
+    "title": "The Joint Undertaking for Morphological Profiling (JUMP) Consortium Datasets Index",
+    "creators": [
+      {
+        "name": "The JUMP Cell Painting Consortium"
+      }
+    ],
+    "upload_type": "dataset",
+    "access_right": "open"
+  }
+}'
+
+ZENODO_ENDPOINT="https://zenodo.org"
+DEPOSITION_PREFIX="${ZENODO_ENDPOINT}/api/deposit/depositions"
+
 FILENAME=$(echo ${FILE_TO_VERSION} | sed 's+.*/++g')
 
 echo "Checking that S3 ETags match their local counterpart"
-S3_ETAGS=$(cat ${FILE_TO_VERSION} | tail -n +2 | cut -f2 -d',' | xargs -I {} -- curl -I --silent "{}" | grep ETag | awk '{print $2}' | sed 's/\r$//' | md5sum | cut -f1 -d" ")
-LOCAL_ETAGS=$(cat ${FILE_TO_VERSION} | tail -n +2 | cut -f3 -d',' | md5sum | cut -f1 -d" ")
+
+# Extract URLs and ETags using csvkit
+urls=$(csvcut -c "url" "${FILE_TO_VERSION}" | tail -n +2)
+local_etags=$(csvcut -c "etag" "${FILE_TO_VERSION}" | tail -n +2)
+
+s3_etags=""
+while IFS= read -r url; do
+  etag=$(curl -I --silent "$url" | awk '/[eE][tT]ag:/ {print $2}' | tr -d '
+"')
+  s3_etags+="${etag}
+"
+done <<< "${urls}"
+
+# Remove the trailing newline from s3_etags
+s3_etags=$(echo -e "${s3_etags}" | sed '/^$/d')
+echo $s3_etags
+
+# Calculate checksums for comparison
+s3_etags_hash=$(echo -e "${s3_etags}" | md5sum | cut -f1 -d" ")
+local_etags_hash=$(echo "${local_etags}" | md5sum | cut -f1 -d" ")
 
 echo "Remote ${S3_ETAGS} vs Local ${LOCAL_ETAGS} values"
 if [ "${S3_ETAGS}" != "${LOCAL_ETAGS}" ]; then
@@ -73,16 +105,7 @@ curl -o /dev/null \
 
 
 # Upload Metadata
-echo -e '{"metadata": {
-    "title": "The Joint Undertaking for Morphological Profiling (JUMP) Consortium Datasets Index",
-    "creators": [
-        {
-            "name": "The JUMP Cell Painting Consortium"
-        }
-    ],
-    "upload_type": "dataset",
-    "access_right": "open"
-}}' > metadata.json
+echo -e "${METADATA_JSON}" > metadata.json
 
 NEW_DEPOSITION_ENDPOINT="${DEPOSITION_PREFIX}/${DEPOSITION}"
 echo "Uploading file to ${NEW_DEPOSITION_ENDPOINT}"
@@ -98,4 +121,3 @@ curl -H "Content-Type: application/json" \
      --data "{}"\
      "${NEW_DEPOSITION_ENDPOINT}/actions/publish?access_token=${ZENODO_TOKEN}"\
     | jq .id
-
