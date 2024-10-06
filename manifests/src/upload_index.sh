@@ -17,7 +17,7 @@ METADATA_JSON='{
 ZENODO_ENDPOINT="https://zenodo.org"
 DEPOSITION_PREFIX="${ZENODO_ENDPOINT}/api/deposit/depositions"
 
-FILENAME=$(echo ${FILE_TO_VERSION} | sed 's+.*/++g')
+FILENAME=${FILE_TO_VERSION##*/}
 
 echo "Checking that S3 ETags match their local counterpart"
 
@@ -38,10 +38,17 @@ s3_etags=$(echo -e "${s3_etags}" | sed '/^$/d')
 s3_etags_hash=$(echo -e "${s3_etags}" | md5sum | cut -f1 -d" ")
 local_etags_hash=$(echo "${local_etags}" | md5sum | cut -f1 -d" ")
 
-echo "Remote ${S3_ETAGS} vs Local ${LOCAL_ETAGS} values"
-if [ "${S3_ETAGS}" != "${LOCAL_ETAGS}" ]; then
+echo "Remote ${s3_etags_hash} vs Local ${local_etags_hash} values"
+if [ "${local_etags_hash}" != "${local_etags_hash}" ]; then
     echo "At least one ETag does not match their url."
     exit 1
+fi
+
+if [ -z "${ZENODO_TOKEN}" ]; then # Check Zenodo Token
+    echo "Access token not available"
+    exit 1
+else
+    echo "Access token found."
 fi
 
 if [ -z "${ORIGINAL_ID}" ]; then # Only get latest id when provided an original one
@@ -58,22 +65,13 @@ else # Update existing dataset
 
     echo "Checking for changes in file contents: Remote ${REMOTE_HASH} vs Local ${LOCAL_HASH}"
     if [ "${REMOTE_HASH}" == "${LOCAL_HASH}" ]; then
-	echo "The urls and md5sums have not changed"
-	exit 0
+    	echo "The urls and md5sums have not changed"
+    	exit 0
     fi
 
     echo "Creating new version"
     DEPOSITION_ENDPOINT="${DEPOSITION_PREFIX}/${LATEST_ID}/actions/newversion"
 fi
-
-
-if [ -z "${ZENODO_TOKEN}" ]; then # Check Zenodo Token
-    echo "Access token not available"
-    exit 1
-else
-    echo "Access token found."
-fi
-
 
 # Create new deposition
 DEPOSITION=$(curl -H "Content-Type: application/json" \
