@@ -21,9 +21,12 @@ FILENAME=${FILE_TO_VERSION##*/}
 
 echo "Checking that S3 ETags match their local counterpart"
 
-# Extract URLs and ETags using csvkit
-urls=$(csvcut -c "url" "${FILE_TO_VERSION}" | tail -n +2)
-local_etags=$(csvcut -c "etag" "${FILE_TO_VERSION}" | tail -n +2)
+# Extract URLs and ETags
+url_column=$(head -n1 "${FILE_TO_VERSION}" | tr ',' '\n' | grep -n "url" | cut -d':' -f1)
+urls=$(awk -F',' -v col="${url_column}" 'NR>1 {gsub(/^"|"$/, "", $col); print $col}' "${FILE_TO_VERSION}")
+
+etag_column=$(head -n1 "${FILE_TO_VERSION}" | tr ',' '\n' | grep -n "etag" | cut -d':' -f1)
+local_etags=$(awk -F',' -v col="${etag_column}" 'NR>1 {gsub(/^"|"$/, "", $col); print $col}' "${FILE_TO_VERSION}")
 
 s3_etags=""
 while IFS= read -r url; do
