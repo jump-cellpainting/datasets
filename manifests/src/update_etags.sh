@@ -12,10 +12,10 @@ fi
 url_column=$(head -n1 "${input_file}" | tr ',' '\n' | grep -n "url" | cut -d':' -f1)
 urls=$(awk -F',' -v col="${url_column}" 'NR>1 {gsub(/^"|"$/, "", $col); print $col}' "${input_file}")
 
-# Fetch ETags for each URL in a loop 
+# Fetch ETags for each URL in a loop
 etag_values="etag"
 while IFS= read -r url; do
-  etag=$(curl -I --silent "${url}" | awk '/[eE][tT]ag:/ {print $2}' | tr -d '\r')
+  etag=$(curl -I --silent "${url}" | awk '/ETag:/ {print $2}' | tr -d '\r')
   etag_values+="\n${etag}"
 done <<< "$urls"
 
