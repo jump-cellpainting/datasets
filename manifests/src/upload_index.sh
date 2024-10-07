@@ -43,7 +43,7 @@ s3_etags_hash=$(echo -e "${s3_etags}" | md5sum | cut -f1 -d" ")
 local_etags_hash=$(echo "${local_etags}" | md5sum | cut -f1 -d" ")
 
 echo "Remote ${s3_etags_hash} vs Local ${local_etags_hash} values"
-if [ "${local_etags_hash}" != "${local_etags_hash}" ]; then
+if [ "${s3_etags_hash}" != "${local_etags_hash}" ]; then
     echo "At least one ETag does not match their url."
     exit 1
 fi
