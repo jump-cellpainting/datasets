@@ -1,3 +1,4 @@
+#!/bin/bash
 # Find the latest version of the dataset
 ORIGINAL_ID="13892061"
 FILE_TO_VERSION="manifests/profile_index.csv"
@@ -62,14 +63,14 @@ else # Update existing dataset
     LATEST_ID=$(curl "${ZENODO_ENDPOINT}/records/${ORIGINAL_ID}/latest" |
 		    grep records | sed 's/.*href=".*\.org\/records\/\(.*\)".*/\1/')
     REMOTE_HASH=$(curl -H "Content-Type: application/json" -X GET  --data "{}" \
-		       "${DEPOSITION_PREFIX}/${LATEST_ID}/files?access_token=${ZENODO_TOKEN}" |
-		      jq ".[] .links .download" | xargs curl | md5sum | cut -f1 -d" ")
+        "${DEPOSITION_PREFIX}/${LATEST_ID}/files?access_token=${ZENODO_TOKEN}" |
+		    jq ".[] .links .download" | xargs curl | md5sum | cut -f1 -d" ")
     LOCAL_HASH=$(md5sum ${FILE_TO_VERSION} | cut -f1 -d" ")
 
     echo "Checking for changes in file contents: Remote ${REMOTE_HASH} vs Local ${LOCAL_HASH}"
     if [ "${REMOTE_HASH}" == "${LOCAL_HASH}" ]; then
-    	echo "The urls and md5sums have not changed"
-    	exit 0
+    	  echo "The urls and md5sums have not changed"
+      	exit 0
     fi
 
     echo "Creating new version"
@@ -78,10 +79,10 @@ fi
 
 # Create new deposition
 DEPOSITION=$(curl -H "Content-Type: application/json" \
-		  -X POST\
-		  --data "{}" \
-		  "${DEPOSITION_ENDPOINT}?access_token=${ZENODO_TOKEN}"\
-		 | jq .id)
+		-X POST\
+		--data "{}" \
+		"${DEPOSITION_ENDPOINT}?access_token=${ZENODO_TOKEN}" | \
+		jq .id)
 echo "New deposition ID is ${DEPOSITION}"
 
 # Variables
@@ -98,8 +99,8 @@ fi
 echo "Uploading file ${FILE_TO_VERSION} to bucket ${BUCKET}"
 cat ${FILE_TO_VERSION}
 curl -o /dev/null \
-     --upload-file ${FILE_TO_VERSION} \
-     ${BUCKET}/${FILENAME}?access_token="${ZENODO_TOKEN}"
+    --upload-file ${FILE_TO_VERSION} \
+    ${BUCKET}/${FILENAME}?access_token="${ZENODO_TOKEN}"
 
 
 # Upload Metadata
@@ -108,14 +109,14 @@ echo -e "${METADATA_JSON}" > metadata.json
 NEW_DEPOSITION_ENDPOINT="${DEPOSITION_PREFIX}/${DEPOSITION}"
 echo "Uploading file to ${NEW_DEPOSITION_ENDPOINT}"
 curl -H "Content-Type: application/json" \
-     -X PUT\
-     --data @metadata.json \
-     "${NEW_DEPOSITION_ENDPOINT}?access_token=${ZENODO_TOKEN}"
+    -X PUT \
+    --data @metadata.json \
+    "${NEW_DEPOSITION_ENDPOINT}?access_token=${ZENODO_TOKEN}"
 
 # Publish
 echo "Publishing to ${NEW_DEPOSITION_ENDPOINT}"
 curl -H "Content-Type: application/json" \
-     -X POST\
-     --data "{}"\
-     "${NEW_DEPOSITION_ENDPOINT}/actions/publish?access_token=${ZENODO_TOKEN}"\
-    | jq .id
+    -X POST \
+    --data "{}" \
+    "${NEW_DEPOSITION_ENDPOINT}/actions/publish?access_token=${ZENODO_TOKEN}" | \
+    jq .id
