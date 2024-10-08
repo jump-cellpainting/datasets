@@ -100,7 +100,7 @@ echo "Uploading file ${FILE_TO_VERSION} to bucket ${BUCKET}"
 cat ${FILE_TO_VERSION}
 curl -o /dev/null \
     --upload-file ${FILE_TO_VERSION} \
-    ${BUCKET}/${FILENAME}?access_token="${ZENODO_TOKEN}"
+    "${BUCKET}"/"${FILENAME}"?access_token="${ZENODO_TOKEN}"
 
 
 # Upload Metadata
