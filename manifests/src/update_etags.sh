@@ -28,13 +28,11 @@ while IFS= read -r url; do
 done <<<"$urls"
 
 # Remove existing ETag column if present
-etag_column=$(head -n1 "${input_file}" | tr ',' '\n' | grep -n "etag" | cut -d':' -f1)
-
-if [[ -n "$etag_column" ]]; then
-	stripped_data=$(cut -d',' -f"1-$((etag_column - 1)),$((etag_column + 1))-" "${input_file}")
-else
-	stripped_data=$(cat "${input_file}")
-fi
+etag_column=$(get_column "${etag_header}")
 
 # Combine original data (without ETag) with new ETag values
-paste -d',' <(echo "${stripped_data}") <(echo -e "${etag_values}")
+if [[ -n "${etag_column}" ]]; then # Replace $etag_column in $input_file with $etag_values
+	awk -F',' -v OFS=',' -v col="${etag_column}" 'NR==FNR{a[NR]=$1;next}{$col=a[FNR]}1' <(echo -e "${etag_values}") "${input_file}"
+else # Append $etag_values as a new column on the right
+	paste -d',' "${input_file}" <(echo -e "${etag_values}")
+fi
