@@ -30,6 +30,27 @@ erDiagram
         string Metadata_JCP2022 "JUMP perturbation ID"
         string Metadata_Compound_Source "Compound-nominating centerID"
     }
+    COMPOUND |o--o{ COMPOUND_REPHUB_ANNOT : ""
+    COMPOUND_REPHUB_ANNOT {
+        string Metadata_InChIKey "Hashed InChI"
+        string Metadata_pert_iname "Perturbation Name"
+        string Metadata_clinical_phase "Clinical Phase"
+        string Metadata_moa "Mechanism of Action"
+        string Metadata_target "Molecular Target"
+        string Metadata_disease_area "Disease Area"
+        string Metadata_indication "Indication"
+    }
+    COMPOUND |o--o{ COMPOUND_CHEMBL_ANNOT : ""
+    COMPOUND_CHEMBL_ANNOT {
+        string Metadata_InChIKey PK "InChIKey"
+        int Metadata_assay_chembl_id "Assay ChEMBL ID"
+        string Metadata_target_chembl_id "Target ChEMBL ID"
+        string Metadata_assay_type "Assay Type"
+        string Metadata_molecule_chembl_id "Molecule ChEMBL ID"
+        float Metadata_pchembl_value "pChEMBL Value"
+        int Metadata_confidence_score "Confidence Score"
+        string Metadata_pref_name "Preferred Name"
+    }
     WELL }o--o| ORF : ""
     ORF {
         string Metadata_JCP2022 PK "JUMP perturbation ID"
