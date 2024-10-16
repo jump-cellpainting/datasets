@@ -27,6 +27,8 @@
                   curl
                   gawk
                   moreutils
+                  shellcheck
+                  shfmt
                 ];
               };
             };
