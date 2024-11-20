@@ -9,6 +9,6 @@ Metadata_Source,Metadata_Microscope_Name,Metadata_Widefield_vs_Confocal,Metadata
 8,ImageXpress Micro Confocal,Confocal,LED,0.75,0,0,3,9,E
 9,Opera Phenix,Widefield,Laser,0.8,0,0,,4,H
 10,CV8000,Confocal,Laser,0.75,3,3,5,6,A
-11,Operetta,Widefield,LED,1.0,1,1,,9,F
+11,Operetta,Widefield,LED,1.0,0,1,,9,F
 13,CV7000,Confocal,Laser,0.75,0,0,,9,D
 15,Opera Phenix,Widefield,Laser,0.4,3,3,5,9,G
