@@ -63,6 +63,7 @@ erDiagram
         int Metadata_Distance_Between_Z_Microns "Distance between Z planes in um (only if > 1um)"
         int Metadata_Sites_Per_Well "Number of sites per well"
         string Metadata_Filter_Configuration "Filter configuration ID"
+        float Metadata_Pixel_Size_Microns "Pixel size in microns"
     }
     MICROSCOPE-FILTER ||--|{ MICROSCOPE-CONFIG : ""
     MICROSCOPE-FILTER {
