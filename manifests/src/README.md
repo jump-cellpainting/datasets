@@ -6,7 +6,7 @@ In the future, additional manifest files will be added and updated in this repos
 ## Updating new versions
 
 To release a new set of assembled JUMP profiles, manually update the URLs in `profile_index.json` to point to the new location.
-If necessary, update the associated names for new dataset types.
+If necessary, update the associated names for new dataset types and (optionally) the permanent link to the version of the recipe that produced them.
 
 ## Update ETags to reflect new URLs
 
