@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Find the latest version of the dataset
 ORIGINAL_ID="13892061"
-FILE_TO_VERSION="manifests/profile_index.csv"
+FILE_TO_VERSION="manifests/profile_index.json"
 METADATA_JSON='{
   "metadata": {
     "title": "The Joint Undertaking for Morphological Profiling (JUMP) Consortium Datasets Index",
