@@ -23,11 +23,8 @@ FILENAME=${FILE_TO_VERSION##*/}
 echo "Checking that S3 ETags match their local counterpart"
 
 # Extract URLs and ETags
-url_column=$(head -n1 "${FILE_TO_VERSION}" | tr ',' '\n' | grep -n "url" | cut -d':' -f1)
-urls=$(awk -F',' -v col="${url_column}" 'NR>1 {gsub(/^"|"$/, "", $col); print $col}' "${FILE_TO_VERSION}")
-
-etag_column=$(head -n1 "${FILE_TO_VERSION}" | tr ',' '\n' | grep -n "etag" | cut -d':' -f1)
-local_etags=$(awk -F',' -v col="${etag_column}" 'NR>1 {gsub(/^"|"$/, "", $col); print $col}' "${FILE_TO_VERSION}")
+urls=$(jq .[].url "${FILE_TO_VERSION}" | tr -d '"')
+local_etags=$(jq .[].etag "${FILE_TO_VERSION}" | tr -d '"')
 
 s3_etags=""
 while IFS= read -r url; do
@@ -42,7 +39,7 @@ s3_etags=$(echo -e "${s3_etags}" | sed '/^$/d')
 s3_etags_hash=$(echo -e "${s3_etags}" | md5sum | cut -f1 -d" ")
 local_etags_hash=$(echo "${local_etags}" | md5sum | cut -f1 -d" ")
 
-echo "Remote ${s3_etags_hash} vs Local ${local_etags_hash} values"
+echo "Remote ${s3_etags_hash} vs local ${local_etags_hash} values"
 if [ "${s3_etags_hash}" != "${local_etags_hash}" ]; then
 	echo "At least one ETag does not match their url."
 	exit 1
