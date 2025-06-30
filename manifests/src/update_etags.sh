@@ -17,4 +17,4 @@ JSON_LIST=$(printf '%s\n' "${NEW_ETAGS}" | jq -R . | jq -s .)
 jq --argjson etags "${JSON_LIST}" '[
   range(0; length) as $i
   | {subset: .[$i].subset, url: .[$i].url, recipe_permalink: .[$i].recipe_permalink, config_permalink: .[$i].config_permalink, etag: $etags[$i]}
-]' profile_index.json
+]' ${input_file}
