@@ -13,7 +13,7 @@ If necessary, update the associated names for new dataset types and (optionally)
 After updating a URL, the ETag (provided by S3) will no longer match. To update the ETags, run the following command from the home folder:
 
 ```bash
-bash manifests/src/update_etags.sh manifests/profile_index.json | sponge manifests/profile_index.json
+bash manifests/src/update_etags.sh manifests/profile_index.json > manifests/profile_index.json.tmp && mv manifests/profile_index.json.tmp manifests/profile_index.json
 ```
 
 Note: If using Nix, all dependencies are already included in the flake at the root folder. Simply run `nix develop --extra-experimental-features nix-command --extra-experimental-features flakes` before the above command.
