@@ -4,11 +4,12 @@
 
 input_file="$1"
 
-urls=$(jq .[].url "${input_file}" | tr -d '"')
+urls=$(jq '.[].url' "${input_file}" | tr -d '"')
 
 # Pull and clean the etag from the AWS url
-NEW_ETAGS=$(printf "${urls}" | xargs -I {} sh -c "curl -I --silent {} | awk '/ETag:/ {print $2}' | cut -f2 -d' ' | tr -d '\"' | tr -d '\r'")
-
+NEW_ETAGS=$(echo "$urls" | while IFS= read -r url; do
+    curl -I --silent "$url" | awk '/ETag:/ {print $2}' | tr -d '"' | tr -d '\r'
+done)
 # Format the list into json
 JSON_LIST=$(printf '%s\n' "${NEW_ETAGS}" | jq -R . | jq -s .)
 
