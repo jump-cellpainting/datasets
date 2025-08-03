@@ -7,15 +7,17 @@ This directory contains experimental metadata for the JUMP Cell Painting Consort
 To create a queryable DuckDB database from these CSV files:
 
 ```bash
-cd metadata/db
-duckdb jump_metadata.duckdb < setup.sql
-duckdb jump_metadata.duckdb < documentation.sql
+cd metadata
+duckdb db/jump_metadata.duckdb < db/setup.sql
 ```
 
 This creates a database with:
-- All CSV data imported as tables
+
+- Explicit schema with primary and foreign key constraints
+- All CSV data imported as tables with data validation
+- A `perturbation` union table that enables proper foreign keys from wells
 - Pre-built views that handle complex joins
-- Comprehensive documentation for all tables and columns
+- Comprehensive documentation for all tables and columns embedded in the schema
 
 ## Querying the Database
 
@@ -25,17 +27,19 @@ duckdb db/jump_metadata.duckdb
 
 # Example: Find all wells with TP53 perturbations
 duckdb db/jump_metadata.duckdb -c "SELECT * FROM well_details WHERE orf_symbol = 'TP53' OR crispr_symbol = 'TP53'"
-
-# See more examples
-cat db/example_queries.sql
 ```
 
-## Key Views
+## Key Tables and Views
 
+### Core Tables
+- **`well`** - Well-level metadata with perturbation IDs
+- **`plate`** - Plate information including batch and type
+- **`compound`**, **`orf`**, **`crispr`** - Perturbation-specific data
+- **`perturbation`** - Union table enabling foreign keys from wells (includes 'unknown' type)
+- **`microscope_config`**, **`cellprofiler_version`** - Experimental configuration
+
+### Views
 - **`well_details`** - Complete well information with all perturbations pre-joined
-- **`plate_summary`** - Plate-level statistics
-- **`gene_perturbations`** - Gene-centric view combining ORF and CRISPR
-- **`perturbations`** - Union of all perturbation types
 
 ## Schema Documentation
 
@@ -49,3 +53,8 @@ SELECT table_name, comment FROM duckdb_tables();
 SELECT table_name, column_name, comment 
 FROM duckdb_columns() 
 WHERE comment IS NOT NULL;
+
+-- View all foreign key relationships
+SELECT table_name, constraint_text 
+FROM duckdb_constraints() 
+WHERE constraint_type = 'FOREIGN KEY';
