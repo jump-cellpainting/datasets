@@ -24,9 +24,6 @@ duckdb db/jump_metadata.duckdb
 
 # UI
 duckdb -ui db/jump_metadata.duckdb
-
-# Example: Find all wells with TP53 perturbations
-duckdb db/jump_metadata.duckdb -c "SELECT * FROM well_details WHERE orf_symbol = 'TP53' OR crispr_symbol = 'TP53'"
 ```
 
 ## Schema Documentation

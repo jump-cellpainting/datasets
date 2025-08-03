@@ -84,10 +84,10 @@ COMMENT ON COLUMN microscope_config.Metadata_Excitation_Type IS 'Light source ty
 COMMENT ON COLUMN microscope_config.Metadata_Objective_NA IS 'Objective lens numerical aperture';
 COMMENT ON COLUMN microscope_config.Metadata_N_Brightfield_Planes_Min IS 'Minimum number of brightfield planes acquired';
 COMMENT ON COLUMN microscope_config.Metadata_N_Brightfield_Planes_Max IS 'Maximum number of brightfield planes acquired';
-COMMENT ON COLUMN microscope_config.Metadata_Distance_Between_Z_Microns IS 'Distance between Z planes in micrometers (only if > 1μm)';
+COMMENT ON COLUMN microscope_config.Metadata_Distance_Between_Z_Microns IS 'Distance between Z planes in microns (only if > 1μm)';
 COMMENT ON COLUMN microscope_config.Metadata_Sites_Per_Well IS 'Number of imaging sites per well';
 COMMENT ON COLUMN microscope_config.Metadata_Filter_Configuration IS 'Filter configuration ID';
-COMMENT ON COLUMN microscope_config.Metadata_Pixel_Size_Microns IS 'Pixel size in micrometers';
+COMMENT ON COLUMN microscope_config.Metadata_Pixel_Size_Microns IS 'Pixel size in microns';
 
 CREATE TABLE cellprofiler_version (
     Metadata_Source VARCHAR PRIMARY KEY,
@@ -108,9 +108,9 @@ CREATE TABLE compound (
 
 COMMENT ON TABLE compound IS 'Chemical compound metadata including structures';
 COMMENT ON COLUMN compound.Metadata_JCP2022 IS 'JUMP Perturbation ID';
-COMMENT ON COLUMN compound.Metadata_InChI IS 'International Chemical Identifier - full structure representation';
-COMMENT ON COLUMN compound.Metadata_InChIKey IS 'Hashed InChI - for quick structure lookups';
-COMMENT ON COLUMN compound.Metadata_SMILES IS 'SMILES notation - simplified molecular structure';
+COMMENT ON COLUMN compound.Metadata_InChI IS 'International Chemical Identifier';
+COMMENT ON COLUMN compound.Metadata_InChIKey IS 'Hashed InChI';
+COMMENT ON COLUMN compound.Metadata_SMILES IS 'SMILES notation';
 
 CREATE TABLE orf (
     Metadata_JCP2022 VARCHAR PRIMARY KEY,
@@ -149,8 +149,8 @@ CREATE TABLE crispr (
 
 COMMENT ON TABLE crispr IS 'CRISPR perturbation metadata for gene knockouts';
 COMMENT ON COLUMN crispr.Metadata_JCP2022 IS 'JUMP Perturbation ID';
-COMMENT ON COLUMN crispr.Metadata_Symbol IS 'NCBI gene symbol targeted';
-COMMENT ON COLUMN crispr.Metadata_NCBI_Gene_ID IS 'NCBI gene ID targeted';
+COMMENT ON COLUMN crispr.Metadata_Symbol IS 'NCBI gene symbol';
+COMMENT ON COLUMN crispr.Metadata_NCBI_Gene_ID IS 'NCBI gene ID';
 
 -- Union table for all perturbations (enables proper FK from well)
 -- This lightweight index table allows wells to reference any perturbation type
@@ -257,7 +257,7 @@ CREATE INDEX idx_well_jcp ON well(Metadata_JCP2022);
 -- well -> plate: Many wells belong to one plate (via Metadata_Plate)
 -- well -> perturbation: Many wells to one perturbation (via Metadata_JCP2022)
 -- perturbation -> compound/orf/crispr: Logical relationship based on perturbation_type
--- compound -> compound_source: One-to-many mapping (compound can have multiple sources)
+-- compound <-> compound_source: Many-to-many mapping (compounds can have multiple sources, sources can provide multiple compounds)
 -- plate -> microscope_config: Many plates to one config (via Metadata_Source)
 -- plate -> cellprofiler_version: Many plates to one version (via Metadata_Source)
 -- microscope_config -> microscope_filter: Many configs to one filter set
