@@ -157,12 +157,25 @@ COMMENT ON COLUMN crispr.Metadata_NCBI_Gene_ID IS 'NCBI gene ID';
 -- while keeping type-specific data (SMILES, gene info, etc.) in separate tables
 CREATE TABLE perturbation (
     Metadata_JCP2022 VARCHAR PRIMARY KEY,
-    perturbation_type VARCHAR CHECK (perturbation_type IN ('compound', 'orf', 'crispr', 'unknown'))
+    Metadata_perturbation_modality VARCHAR CHECK (Metadata_perturbation_modality IN ('compound', 'orf', 'crispr', 'unknown'))
 );
 
 COMMENT ON TABLE perturbation IS 'Union of all perturbation types (compound, orf, crispr, unknown). Enables foreign key from well table.';
 COMMENT ON COLUMN perturbation.Metadata_JCP2022 IS 'JUMP Perturbation ID';
-COMMENT ON COLUMN perturbation.perturbation_type IS 'Type of perturbation: compound, orf, crispr, or unknown';
+COMMENT ON COLUMN perturbation.Metadata_perturbation_modality IS 'Type of perturbation: compound, orf, crispr, or unknown';
+
+-- Control designation table (provides human-readable names and control types)
+CREATE TABLE perturbation_control (
+    Metadata_JCP2022 VARCHAR PRIMARY KEY,
+    Metadata_pert_type VARCHAR CHECK (Metadata_pert_type IN ('trt', 'poscon', 'negcon', 'empty')),
+    Metadata_Name VARCHAR,
+    FOREIGN KEY (Metadata_JCP2022) REFERENCES perturbation(Metadata_JCP2022)
+);
+
+COMMENT ON TABLE perturbation_control IS 'Control type and human-readable names for special perturbations. Note: The orf table already contains a Metadata_pert_type column which is redundant with this table and may be deprecated in future versions';
+COMMENT ON COLUMN perturbation_control.Metadata_JCP2022 IS 'JUMP Perturbation ID';
+COMMENT ON COLUMN perturbation_control.Metadata_pert_type IS 'Perturbation type: trt (treatment), poscon (positive control), negcon (negative control), empty (empty well)';
+COMMENT ON COLUMN perturbation_control.Metadata_Name IS 'Human-readable name for the perturbation (e.g., "DMSO" instead of "JCP2022_033924"). This column provides friendly names for commonly used controls and does not map to any existing table columns';
 
 -- Core experimental tables (depend on microscope_config and cellprofiler_version)
 CREATE TABLE plate (
@@ -233,6 +246,11 @@ SELECT Metadata_JCP2022, 'crispr' FROM crispr;
 -- Add the special unknown entry
 INSERT INTO perturbation VALUES ('JCP2022_UNKNOWN', 'unknown');
 
+-- Load perturbation control information
+INSERT INTO perturbation_control (Metadata_JCP2022, Metadata_pert_type, Metadata_Name)
+SELECT Metadata_JCP2022, Metadata_pert_type, Metadata_Name 
+FROM read_csv_auto('perturbation_control.csv');
+
 -- Then load tables with foreign keys
 INSERT INTO plate SELECT * FROM read_csv_auto('plate.csv.gz');
 
@@ -256,7 +274,7 @@ CREATE INDEX idx_well_jcp ON well(Metadata_JCP2022);
 -- ============================================
 -- well -> plate: Many wells belong to one plate (via Metadata_Plate)
 -- well -> perturbation: Many wells to one perturbation (via Metadata_JCP2022)
--- perturbation -> compound/orf/crispr: Logical relationship based on perturbation_type
+-- perturbation -> compound/orf/crispr: Logical relationship based on Metadata_perturbation_modality
 -- compound <-> compound_source: Many-to-many mapping (compounds can have multiple sources, sources can provide multiple compounds)
 -- plate -> microscope_config: Many plates to one config (via Metadata_Source)
 -- plate -> cellprofiler_version: Many plates to one version (via Metadata_Source)
