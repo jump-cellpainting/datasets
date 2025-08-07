@@ -83,7 +83,7 @@ erDiagram
 
 ### Schema Notes
 
-- **Simplified Overview:** This diagram shows key columns only (e.g., COMPOUND has additional Metadata_InChI column). See `db/setup.sql` for complete definitions.
+- **Simplified Overview:** This diagram shows key columns only (e.g., `COMPOUND` has additional `Metadata_InChI column`). See `db/setup.sql` for complete definitions.
 - The `PERTURBATION` table is created during database setup by combining all compound, ORF, and CRISPR IDs (no separate CSV file).
 - `PERTURBATION_CONTROL` defines which perturbations are controls (negcon/poscon/empty) and provides human-readable names (e.g., "DMSO" → JCP2022_033924). Note: The ORF table also has a legacy `Metadata_pert_type` column, but PERTURBATION_CONTROL is now the canonical source for all control designations across compound, ORF, and CRISPR modalities.
 
