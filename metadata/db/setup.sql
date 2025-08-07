@@ -268,19 +268,3 @@ INSERT INTO well SELECT * FROM read_csv_auto('well.csv.gz');
 -- (Primary keys already create indexes automatically)
 
 CREATE INDEX idx_well_jcp ON well(Metadata_JCP2022);
-
--- ============================================
--- RELATIONSHIPS SUMMARY
--- ============================================
--- well -> plate: Many wells belong to one plate (via Metadata_Plate)
--- well -> perturbation: Many wells to one perturbation (via Metadata_JCP2022)
--- perturbation -> compound/orf/crispr: Logical relationship based on Metadata_perturbation_modality
--- compound <-> compound_source: Many-to-many mapping (compounds can have multiple sources, sources can provide multiple compounds)
--- plate -> microscope_config: Many plates to one config (via Metadata_Source)
--- plate -> cellprofiler_version: Many plates to one version (via Metadata_Source)
--- microscope_config -> microscope_filter: Many configs to one filter set
---
--- To view documentation in the database:
---   Tables:  SELECT table_name, comment FROM duckdb_tables();
---   Columns: SELECT table_name, column_name, comment FROM duckdb_columns() WHERE comment IS NOT NULL;
---   Foreign Keys: SELECT table_name, constraint_text FROM duckdb_constraints() WHERE constraint_type = 'FOREIGN KEY';
