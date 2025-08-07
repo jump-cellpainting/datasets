@@ -35,7 +35,7 @@ erDiagram
     PERTURBATION-CONTROL }o--|| PERTURBATION : "describes"
     PERTURBATION-CONTROL {
         string Metadata_JCP2022 PK,FK
-        string Metadata_pert_type "trt/poscon/negcon/empty"
+        string Metadata_pert_type "poscon/negcon/empty"
         string Metadata_Name "Human-readable name"
     }
     
