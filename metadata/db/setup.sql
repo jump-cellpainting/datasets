@@ -167,14 +167,14 @@ COMMENT ON COLUMN perturbation.Metadata_perturbation_modality IS 'Type of pertur
 -- Control designation table (provides human-readable names and control types)
 CREATE TABLE perturbation_control (
     Metadata_JCP2022 VARCHAR PRIMARY KEY,
-    Metadata_pert_type VARCHAR CHECK (Metadata_pert_type IN ('trt', 'poscon', 'negcon', 'empty')),
+    Metadata_pert_type VARCHAR CHECK (Metadata_pert_type IN ('poscon', 'negcon', 'empty')),
     Metadata_Name VARCHAR,
     FOREIGN KEY (Metadata_JCP2022) REFERENCES perturbation(Metadata_JCP2022)
 );
 
 COMMENT ON TABLE perturbation_control IS 'Control type and human-readable names for special perturbations. Note: The orf table already contains a Metadata_pert_type column which is redundant with this table and may be deprecated in future versions';
 COMMENT ON COLUMN perturbation_control.Metadata_JCP2022 IS 'JUMP Perturbation ID';
-COMMENT ON COLUMN perturbation_control.Metadata_pert_type IS 'Perturbation type: trt (treatment), poscon (positive control), negcon (negative control), empty (empty well)';
+COMMENT ON COLUMN perturbation_control.Metadata_pert_type IS 'Perturbation type: poscon (positive control), negcon (negative control), empty (empty well)';
 COMMENT ON COLUMN perturbation_control.Metadata_Name IS 'Human-readable name for the perturbation (e.g., "DMSO" instead of "JCP2022_033924"). This column provides friendly names for commonly used controls and does not map to any existing table columns';
 
 -- Core experimental tables (depend on microscope_config and cellprofiler_version)
