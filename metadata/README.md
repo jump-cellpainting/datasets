@@ -1,98 +1,144 @@
 # Metadata
 
-The metadata [schema](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram?id=entity-relationship-diagrams) is shown below.
+This directory contains experimental metadata for the JUMP Cell Painting Consortium datasets.
 
+## Schema Overview
 
 ```mermaid
 erDiagram
-    WELL }|--|| PLATE : ""
+    WELL }|--|| PLATE : "belongs to"
+    WELL }o--|| PERTURBATION : "treated with"
     WELL {
-        string Metadata_Source "Data-generating center ID"
-        string Metadata_Plate "Plate ID"
-        string Metadata_Well "Well position"
-        string Metadata_JCP2022 "JUMP Perturbation ID"
+        string Metadata_Plate PK,FK
+        string Metadata_Well PK
+        string Metadata_JCP2022 FK
+        string Metadata_Source
     }
+    
+    PLATE }|--|| MICROSCOPE-CONFIG : "imaged with"
+    PLATE }|--|| CELLPROFILER-VERSION : "analyzed with"
     PLATE {
-        string Metadata_Source "Data-generating center ID"
-        string Metadata_Batch "Batch ID"
-        string Metadata_Plate "Plate ID"
-        string Metadata_PlateType "One of: TARGET1, TARGET2, POSCON8, DMSO, ORF, COMPOUND, COMPOUND_EMPTY"
+        string Metadata_Plate PK
+        string Metadata_Source FK
+        string Metadata_Batch
+        string Metadata_PlateType
     }
-    WELL }o--o| COMPOUND : ""
+    
+    PERTURBATION ||--o{ COMPOUND : "if compound"
+    PERTURBATION ||--o{ ORF : "if ORF"
+    PERTURBATION ||--o{ CRISPR : "if CRISPR"
+    PERTURBATION {
+        string Metadata_JCP2022 PK
+        string Metadata_perturbation_modality "compound/orf/crispr/unknown"
+    }
+    
+    PERTURBATION-CONTROL }o--|| PERTURBATION : "describes"
+    PERTURBATION-CONTROL {
+        string Metadata_JCP2022 PK,FK
+        string Metadata_pert_type "poscon/negcon/empty"
+        string Metadata_Name "Human-readable name"
+    }
+    
+    COMPOUND ||--o{ COMPOUND-SOURCE : "sourced from"
     COMPOUND {
-        string Metadata_JCP2022 PK "JUMP perturbation ID"
-        string Metadata_InChI "International Chemical ID"
-        string Metadata_InChIKey "Hashed InChI"
-        string Metadata_SMILES "SMILES"
+        string Metadata_JCP2022 PK
+        string Metadata_InChIKey
+        string Metadata_SMILES
     }
-    COMPOUND ||--|| COMPOUND_SOURCE : ""
-    COMPOUND_SOURCE {
-        string Metadata_JCP2022 "JUMP perturbation ID"
-        string Metadata_Compound_Source "Compound-nominating centerID"
+    
+    COMPOUND-SOURCE {
+        string Metadata_JCP2022 PK,FK
+        string Metadata_Compound_Source PK
     }
-    WELL }o--o| ORF : ""
+    
     ORF {
-        string Metadata_JCP2022 PK "JUMP perturbation ID"
-        string Metadata_broad_sample "Broad perturbation ID"
-        string Metadata_Name "Internal perturbation ID"
-        string Metadata_Vector "ORF expression vector"
-        float Metadata_Prot_Match "% match to protein sequence"
-        int Metadata_Insert_Length "ORF sequence length"
-        string Metadata_Taxon_ID "NCBI taxonomy ID"
-        string Metadata_Symbol "NCBI gene symbol"
-        string Metadata_NCBI_Gene_ID "NCBI gene ID"
-        string Metadata_Transcript "NCBI reference sequence"
-        string Metadata_Gene_Description "NCBI gene definition"
-        string Metadata_pert_type "One of: trt, poscon, negcon"
+        string Metadata_JCP2022 PK
+        string Metadata_Symbol "Gene symbol"
+        string Metadata_NCBI_Gene_ID
     }
-    WELL }o--o| CRISPR : ""
+    
     CRISPR {
-        string Metadata_JCP2022 PK "JUMP perturbation ID"
-        string Metadata_Symbol "NCBI gene symbol"
-        string Metadata_NCBI_Gene_ID "NCBI gene ID"
+        string Metadata_JCP2022 PK
+        string Metadata_Symbol "Gene symbol"
+        string Metadata_NCBI_Gene_ID
     }
-    PLATE }|--|| MICROSCOPE-CONFIG : ""
+    
+    MICROSCOPE-CONFIG }o--|| MICROSCOPE-FILTER : "uses"
     MICROSCOPE-CONFIG {
-        string Metadata_Source "Data-generating center ID"
-        string Metadata_Microscope_Name "Microscope model name"
-        string Metadata_Widefield_vs_Confocal "One of: Widefield, Confocal"
-        string Metadata_Excitation_Type "One of: Laser, LED"
-        float Metadata_Objective_NA "Objective numerical aperture"
-        int Metadata_N_Brightfield_Planes_Min "Min number of brightfield planes taken"
-        int Metadata_N_Brightfield_Planes_Max "Max number of brightfield planes taken"
-        int Metadata_Distance_Between_Z_Microns "Distance between Z planes in um (only if > 1um)"
-        int Metadata_Sites_Per_Well "Number of sites per well"
-        string Metadata_Filter_Configuration "Filter configuration ID"
-        float Metadata_Pixel_Size_Microns "Pixel size in microns"
+        string Metadata_Source PK
+        string Metadata_Microscope_Name
+        string Metadata_Filter_Configuration FK
     }
-    MICROSCOPE-FILTER ||--|{ MICROSCOPE-CONFIG : ""
+    
     MICROSCOPE-FILTER {
-        string Metadata_Filter_Configuration "Filter configuration ID"
-        float Metadata_Excitation_Low_DNA "Excitation wavelength min, DNA channel"
-        float Metadata_Excitation_Low_ER "Excitation wavelength min, ER channel"
-        float Metadata_Excitation_Low_RNA "Excitation wavelength min, RNA channel"
-        float Metadata_Excitation_Low_AGP "Excitation wavelength min, AGP channel"
-        float Metadata_Excitation_Low_Mito "Excitation wavelength min, Mito channel"
-        float Metadata_Excitation_High_DNA "Excitation wavelength max, DNA channel"
-        float Metadata_Excitation_High_ER "Excitation wavelength max, ER channel"
-        float Metadata_Excitation_High_RNA "Excitation wavelength max, RNA channel"
-        float Metadata_Excitation_High_AGP "Excitation wavelength max, AGP channel"
-        float Metadata_Excitation_High_Mito "Excitation wavelength max, Mito channel"
-        float Metadata_Emission_Low_DNA "Emission wavelength min, DNA channel"
-        float Metadata_Emission_Low_ER "Emission wavelength min, ER channel"
-        float Metadata_Emission_Low_RNA "Emission wavelength min, RNA channel"
-        float Metadata_Emission_Low_AGP "Emission wavelength min, AGP channel"
-        float Metadata_Emission_Low_Mito "Emission wavelength min, Mito channel"
-        float Metadata_Emission_High_DNA "Emission wavelength max, DNA channel"
-        float Metadata_Emission_High_ER "Emission wavelength max, ER channel"
-        float Metadata_Emission_High_RNA "Emission wavelength max, RNA channel"
-        float Metadata_Emission_High_AGP "Emission wavelength max, AGP channel"
-        float Metadata_Emission_High_Mito "Emission wavelength max, Mito channel"
-        string Metadata_FPBase_Config "Fluorescence spectra config URL"
+        string Metadata_Filter_Configuration PK
+        string wavelength_configs "DNA/ER/RNA/AGP/Mito channels"
     }
-    PLATE }|--|| CELLPROFILER-VERSION : ""
+    
     CELLPROFILER-VERSION {
-        string Metadata_Source "Data-generating center ID"
-        string Metadata_CellProfiler_Version "CellProfiler Version"
+        string Metadata_Source PK
+        string Metadata_CellProfiler_Version
     }
 ```
+
+### Schema Notes
+
+- **Simplified Overview:** This diagram shows key columns only (e.g., `COMPOUND` has additional `Metadata_InChI column`). See `db/setup.sql` for complete definitions.
+- The `PERTURBATION` table is created during database setup by combining all compound, ORF, and CRISPR IDs (no separate CSV file).
+- `PERTURBATION_CONTROL` defines which perturbations are controls (negcon/poscon/empty) and provides human-readable names (e.g., "DMSO" → JCP2022_033924). Note: The ORF table also has a legacy `Metadata_pert_type` column, but PERTURBATION_CONTROL is now the canonical source for all control designations across compound, ORF, and CRISPR modalities.
+
+## Database Setup
+
+To create a queryable [DuckDB](https://duckdb.org/docs/installation/) database from these CSV files:
+
+```bash
+rm -rf db/jump_metadata.duckdb && duckdb db/jump_metadata.duckdb < db/setup.sql
+```
+
+This creates a database with:
+
+- Explicit schema with primary and foreign key constraints
+- All CSV data imported as tables with data validation
+- Documentation for all tables and columns embedded in the schema
+
+## Querying the Database
+
+```bash
+# Interactive mode
+duckdb db/jump_metadata.duckdb
+
+# UI; available by default for DuckDB versions >= v1.2.1
+# https://duckdb.org/docs/stable/core_extensions/ui.html
+duckdb -ui db/jump_metadata.duckdb
+```
+
+## Schema Documentation
+
+Full schema documentation is embedded in the database. To view:
+
+```sql
+-- List all tables with descriptions
+SELECT table_name, comment FROM duckdb_tables();
+
+-- View column descriptions
+SELECT table_name, column_name, comment 
+FROM duckdb_columns() 
+WHERE comment IS NOT NULL;
+
+-- View all foreign key relationships
+SELECT table_name, constraint_text 
+FROM duckdb_constraints() 
+WHERE constraint_type = 'FOREIGN KEY';
+```
+
+## For Maintainers: Schema Changes
+
+When adding or modifying tables:
+
+1. **Add data file**: Use `.csv` for small tables (<1MB) or `.csv.gz` for larger ones
+2. **Update `db/setup.sql`**: 
+   - Define table with PRIMARY KEY and FOREIGN KEY constraints
+   - Add COMMENT statements for table and columns
+   - Update the import section with correct file extension
+3. **Test**: `rm -rf db/jump_metadata.duckdb && duckdb db/jump_metadata.duckdb < db/setup.sql`
+4. **Update diagram**: Add table to Mermaid diagram above with minimal columns (PKs, FKs, 1-2 key fields)

@@ -129,3 +129,9 @@ dmypy.json
 .pyre/
 
 .DS_Store
+
+# Claude
+.claude
+CLAUDE.md
+.mcp.json
+*.duckdb
