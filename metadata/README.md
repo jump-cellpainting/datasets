@@ -14,7 +14,7 @@ erDiagram
         string Metadata_JCP2022 FK
         string Metadata_Source
     }
-    
+
     PLATE }|--|| MICROSCOPE-CONFIG : "imaged with"
     PLATE }|--|| CELLPROFILER-VERSION : "analyzed with"
     PLATE {
@@ -23,7 +23,7 @@ erDiagram
         string Metadata_Batch
         string Metadata_PlateType
     }
-    
+
     PERTURBATION ||--o{ COMPOUND : "if compound"
     PERTURBATION ||--o{ ORF : "if ORF"
     PERTURBATION ||--o{ CRISPR : "if CRISPR"
@@ -31,50 +31,50 @@ erDiagram
         string Metadata_JCP2022 PK
         string Metadata_perturbation_modality "compound/orf/crispr/unknown"
     }
-    
+
     PERTURBATION-CONTROL }o--|| PERTURBATION : "describes"
     PERTURBATION-CONTROL {
         string Metadata_JCP2022 PK,FK
         string Metadata_pert_type "poscon/negcon/empty"
         string Metadata_Name "Human-readable name"
     }
-    
+
     COMPOUND ||--o{ COMPOUND-SOURCE : "sourced from"
     COMPOUND {
         string Metadata_JCP2022 PK
         string Metadata_InChIKey
         string Metadata_SMILES
     }
-    
+
     COMPOUND-SOURCE {
         string Metadata_JCP2022 PK,FK
         string Metadata_Compound_Source PK
     }
-    
+
     ORF {
         string Metadata_JCP2022 PK
         string Metadata_Symbol "Gene symbol"
         string Metadata_NCBI_Gene_ID
     }
-    
+
     CRISPR {
         string Metadata_JCP2022 PK
         string Metadata_Symbol "Gene symbol"
         string Metadata_NCBI_Gene_ID
     }
-    
+
     MICROSCOPE-CONFIG }o--|| MICROSCOPE-FILTER : "uses"
     MICROSCOPE-CONFIG {
         string Metadata_Source PK
         string Metadata_Microscope_Name
         string Metadata_Filter_Configuration FK
     }
-    
+
     MICROSCOPE-FILTER {
         string Metadata_Filter_Configuration PK
         string wavelength_configs "DNA/ER/RNA/AGP/Mito channels"
     }
-    
+
     CELLPROFILER-VERSION {
         string Metadata_Source PK
         string Metadata_CellProfiler_Version
@@ -101,6 +101,14 @@ This creates a database with:
 - All CSV data imported as tables with data validation
 - Documentation for all tables and columns embedded in the schema
 
+## SQLite Export
+
+To export the DuckDB database to SQLite format:
+
+```bash
+bash db/export_sqlite.sh
+```
+
 ## Querying the Database
 
 ```bash
@@ -121,13 +129,13 @@ Full schema documentation is embedded in the database. To view:
 SELECT table_name, comment FROM duckdb_tables();
 
 -- View column descriptions
-SELECT table_name, column_name, comment 
-FROM duckdb_columns() 
+SELECT table_name, column_name, comment
+FROM duckdb_columns()
 WHERE comment IS NOT NULL;
 
 -- View all foreign key relationships
-SELECT table_name, constraint_text 
-FROM duckdb_constraints() 
+SELECT table_name, constraint_text
+FROM duckdb_constraints()
 WHERE constraint_type = 'FOREIGN KEY';
 ```
 
@@ -136,7 +144,7 @@ WHERE constraint_type = 'FOREIGN KEY';
 When adding or modifying tables:
 
 1. **Add data file**: Use `.csv` for small tables (<1MB) or `.csv.gz` for larger ones
-2. **Update `db/setup.sql`**: 
+2. **Update `db/setup.sql`**:
    - Define table with PRIMARY KEY and FOREIGN KEY constraints
    - Add COMMENT statements for table and columns
    - Update the import section with correct file extension

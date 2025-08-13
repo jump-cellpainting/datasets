@@ -1,0 +1,9 @@
+# Markdown style configuration
+MD007:
+  indent: 4          # List indent
+MD013: false         # Line length
+MD024: false         # Multiple headers with same content
+MD029:
+  style: ordered     # Ordered list style
+MD033: false         # Inline HTML
+MD046: false         # Code block style
