@@ -236,7 +236,7 @@ INSERT INTO orf SELECT * FROM read_csv_auto('orf.csv.gz');
 INSERT INTO crispr SELECT * FROM read_csv_auto('crispr.csv.gz');
 
 -- Populate the perturbation union table
-INSERT INTO perturbation 
+INSERT INTO perturbation
 SELECT Metadata_JCP2022, 'compound' FROM compound
 UNION ALL
 SELECT Metadata_JCP2022, 'orf' FROM orf
@@ -248,14 +248,14 @@ INSERT INTO perturbation VALUES ('JCP2022_UNKNOWN', 'unknown');
 
 -- Load perturbation control information
 INSERT INTO perturbation_control (Metadata_JCP2022, Metadata_pert_type, Metadata_Name)
-SELECT Metadata_JCP2022, Metadata_pert_type, Metadata_Name 
+SELECT Metadata_JCP2022, Metadata_pert_type, Metadata_Name
 FROM read_csv_auto('perturbation_control.csv');
 
 -- Then load tables with foreign keys
 INSERT INTO plate SELECT * FROM read_csv_auto('plate.csv.gz');
 
 -- Only insert compound_source records that have matching compounds (deduplicated)
-INSERT INTO compound_source 
+INSERT INTO compound_source
 SELECT DISTINCT cs.* FROM read_csv_auto('compound_source.csv.gz') cs
 WHERE cs.Metadata_JCP2022 IN (SELECT Metadata_JCP2022 FROM compound);
 
