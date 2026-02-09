@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v5.0.0
+  rev: v6.0.0
   hooks:
   - id: trailing-whitespace
     exclude: \.dvc$|dvc\.lock|\.local\.json$
@@ -11,7 +11,7 @@ repos:
     exclude: \.dvc$|dvc\.lock|\.local\.json$
 
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.9.1
+  rev: v0.15.0
   hooks:
   - id: ruff
     args: [--fix]
